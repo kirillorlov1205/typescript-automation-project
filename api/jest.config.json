@@ -1,0 +1,6 @@
+{
+    "preset": "ts-jest",
+     "testEnvironment": "node",
+     "testMatch" : ["**/api/jest-test/**/*.spec.ts"]
+   }
+   

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "unit:test": "jest --config unit/jest.config.json"
+    "unit:test": "jest --config unit/jest.config.json",
+    "api:test": "jest --config api/jest.config.json"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,10 @@
   "devDependencies": {
     "@types/jest": "^29.0.3",
     "@types/node": "^18.7.18",
+    "axios": "^0.27.2",
+    "axios-logger": "^2.6.1",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
     "jest": "^29.0.3",
     "randomstring": "^1.2.2",
     "ts-jest": "^29.0.1",
