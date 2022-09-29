@@ -4,8 +4,6 @@ import https from "https";
 import { METHODS, requestDataType } from "./types";
 import * as axiosLogger from "axios-Logger";
 
-
-
 const instanse = axios.create({
     baseURL: "https://jsonplaceholder.typicode.com",
     timeout: 5000,
@@ -17,8 +15,7 @@ instanse.interceptors.request.use(axiosLogger.requestLogger, axiosLogger.errorLo
 instanse.interceptors.response.use(axiosLogger.responseLogger, axiosLogger.errorLogger);
 
 class Client {
-
-    public async request(method: METHODS, data: requestDataType) {
+    public request(method: METHODS, data: requestDataType) {
         const { url, body, headers } = data;
         switch (method) {
             case METHODS.GET:
