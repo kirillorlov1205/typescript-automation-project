@@ -8,7 +8,7 @@ describe("Onliner navigation bar tests", () => {
 
     beforeEach(() => {
         homePage.visitPage();
-    })
+    });
 
     const pageTitlesMap = {
         "Catalog": "Все суперцены!",
@@ -16,7 +16,7 @@ describe("Onliner navigation bar tests", () => {
         "Realt": "Продажа",
         "Tasks": "Заказы",
         "Baraholka": "Барахолка",
-    }
+    };
 
     for (const pageTitle in pageTitlesMap) {
         it(`Should navigate to the ${pageTitle} page`, () => {
@@ -25,4 +25,4 @@ describe("Onliner navigation bar tests", () => {
             homePage.waitTillPageHeaderIncludeText(pageTitle, pageTitlesMap[pageTitle as keyof typeof pageTitlesMap]);
         });
     }
-})
+});

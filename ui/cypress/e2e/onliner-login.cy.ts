@@ -16,7 +16,7 @@ describe("Login page test", () => {
         cy.wait("@HomePage", {timeout: DEFAULT_WAITNG_TIME / 5}).then(data => {
             expect(data.response?.statusCode).to.equal(200);
         });
-    })
+    });
 
     const emptyEmailValidationMessage = "Укажите ник или e-mail";
     const emptyPasswordValidationMessage = "Укажите пароль";
@@ -24,8 +24,8 @@ describe("Login page test", () => {
     it("Should successfully log the user in and show protection pop up while login with correct credentials", () => {
         homePage.navigationBar.clickLoginButton();
         cy.login(TEST_USER.email, TEST_USER.password);
-        loginPage.getProtectionPopUpMessage().should("have.text", `Давайте проверим, вы робот или нет`);
-    })
+        loginPage.getProtectionPopUpMessage().should("have.text", "Давайте проверим, вы робот или нет");
+    });
 
     it(`Should show '${emptyEmailValidationMessage}' validation message while logging in with empty email and valid password`, () => {
         homePage.navigationBar.clickLoginButton();
@@ -33,8 +33,8 @@ describe("Login page test", () => {
         loginPage.submitForm();
         loginPage.getValidationMessage().invoke("text").then((text: string) => {
             expect(text).to.include(emptyEmailValidationMessage);
-        })
-    })
+        });
+    });
 
     it(`Should show '${emptyPasswordValidationMessage}' validation message while logging in with valid email and empty password`, () => {
         homePage.navigationBar.clickLoginButton();
@@ -42,6 +42,6 @@ describe("Login page test", () => {
         loginPage.submitForm();
         loginPage.getValidationMessage().invoke("text").then((text: string) => {
             expect(text).to.include(emptyPasswordValidationMessage);
-        })
-    })
-})
+        });
+    });
+});

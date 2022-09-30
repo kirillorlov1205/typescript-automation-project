@@ -1,8 +1,7 @@
 {
   "env": {
     "browser": true,
-    "es2021": true,
-    
+    "es2021": true
   },
   "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
   "overrides": [],
@@ -16,6 +15,10 @@
     "semi": ["error", "always"],
     "quotes": ["error", "double"],
     "camelcase": 1,
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@angular-eslint/no-empty-lifecycle-method": "off"
   }
 }

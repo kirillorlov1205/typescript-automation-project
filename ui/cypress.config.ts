@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-import AllureWriter from '@shelex/cypress-allure-plugin/writer'
+import AllureWriter from "@shelex/cypress-allure-plugin/writer";
 import { ASSETS_FOLDER, BASE_URL, DEFAULT_WAITNG_TIME } from "./cypress/support/constants/constants";
 
 export default defineConfig({
@@ -20,7 +20,7 @@ export default defineConfig({
     },
     env: {
       allure: "true",
-      allureResultsPath: "ui/cypress/assets/allure-results"
+      // allureResultsPath: "ui/cypress/assets/allure-results"
     }
   }
 });
