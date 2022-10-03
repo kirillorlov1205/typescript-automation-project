@@ -12,9 +12,9 @@ export interface requestDataType {
 }
 
 export enum METHODS {
-    GET = "GET",
-    POST = "POST",
-    PATCH = "PATCH",
-    PUT = "PUT",
-    DELETE = "DELETE",
+    GET = 'GET',
+    POST = 'POST',
+    PATCH = 'PATCH',
+    PUT = 'PUT',
+    DELETE = 'DELETE',
 }

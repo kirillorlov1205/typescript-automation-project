@@ -4,13 +4,13 @@ export class RegistrationForm {
 
     reqister(login: string, password: string, confirmPassword: string) {
         if (this.loginValidation(login)) {
-            return "Login should be between 2 to 12 characters";
+            return 'Login should be between 2 to 12 characters';
         } else if (this.passwordValidation(password)) {
-            return "Password should be between 6 to 12 characters";
+            return 'Password should be between 6 to 12 characters';
         } else if (this.confirmPasswordValidation(password, confirmPassword)) {
-            return "Confirm password should match password";
+            return 'Confirm password should match password';
         } else {
-            return "User has been registered seccessfully";
+            return 'User has been registered seccessfully';
         }
     }
 

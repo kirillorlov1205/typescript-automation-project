@@ -1,4 +1,4 @@
 export const TEST_USER = {
-    login: "Login12",
-    password: "Password12",
-}
+    login: 'Login12',
+    password: 'Password12',
+};

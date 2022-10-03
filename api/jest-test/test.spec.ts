@@ -1,23 +1,24 @@
-import { client } from "../support/http-client";
-import { METHODS, Post } from "../support/types";
+import { client } from '../support/http-client';
+import { METHODS, Post } from '../support/types';
+import {expect, test} from '@jest/globals';
 
 const POSTS_QUANTITY = 100;
 const USERS_QUANTITY = 10;
 const POST_ID = Math.floor(Math.random() * POSTS_QUANTITY) + 1;
 const POST: Post = {
-    title: "AQA",
-    body: "Let's automate",
+    title: 'AQA',
+    body: 'Lets automate',
     userId: Math.floor(Math.random() * USERS_QUANTITY) + 1
 };
 
 let response;
 
-describe("Test HTTP methods", () => {
+describe('Test HTTP methods', () => {
 
     describe(`${METHODS.GET} method`, () => {
-        test("Should correctly get all posts", async () => {
+        test('Should correctly get all posts', async () => {
             try {
-                response = await client.request(METHODS.GET, { url: "/posts" });
+                response = await client.request(METHODS.GET, { url: '/posts' });
             } catch (error: any) {
                 throw new Error(error.message);
             }
@@ -25,7 +26,7 @@ describe("Test HTTP methods", () => {
             expect(response.data).toHaveLength(POSTS_QUANTITY);
         });
 
-        test(`Should correctly get post with id ${POST_ID}`, async () => {
+        test(`Should correctly get post with "${POST_ID}" id`, async () => {
             try {
                 response = await client.request(METHODS.GET, { url: `/posts/${POST_ID}` });
             } catch (error: any) {
@@ -35,7 +36,7 @@ describe("Test HTTP methods", () => {
             expect(response.data.id).toEqual(POST_ID);
         });
 
-        test("Should correctly get filtered result by userId", async () => {
+        test('Should correctly get filtered result by userId', async () => {
             const { userId } = POST;
             try {
                 response = await client.request(METHODS.GET, { url: `/posts?userId=${userId}` });
@@ -48,7 +49,7 @@ describe("Test HTTP methods", () => {
             });
         });
 
-        test("Should correctly handle non-existing post", async () => {
+        test('Should correctly handle non-existing post', async () => {
             try {
                 response = await client.request(METHODS.GET, { url: `posts/${POSTS_QUANTITY + 1}` });
             } catch (error: any) {
@@ -58,9 +59,9 @@ describe("Test HTTP methods", () => {
     });
 
     describe(`${METHODS.POST} method`, () => {
-        test("Should correctly create a post", async () => {
+        test('Should correctly create a post', async () => {
             try {
-                response = await client.request(METHODS.POST, { url: "/posts", body: POST, headers: { "Content-Type": "application/json" } });
+                response = await client.request(METHODS.POST, { url: '/posts', body: POST, headers: { 'Content-Type': 'application/json' } });
             } catch (error: any) {
                 throw new Error(error.message);
             }
@@ -72,21 +73,21 @@ describe("Test HTTP methods", () => {
     });
 
     describe(`${METHODS.PATCH} method`, () => {
-        test(`Should correctly update post with id ${POST_ID} by method ${METHODS.PATCH}`, async () => {
+        test(`Should correctly update post with id "${POST_ID}" by method "${METHODS.PATCH}"`, async () => {
             try {
-                response = await client.request(METHODS.PATCH, { url: `/posts/${POST_ID}`, body: { title: "New title" }, headers: { "Content-Type": "application/json", } });
+                response = await client.request(METHODS.PATCH, { url: `/posts/${POST_ID}`, body: { title: 'New title' }, headers: { 'Content-Type': 'application/json', } });
             } catch (error: any) {
                 throw new Error(error.message);
             }
-            expect(response.data.title).toEqual("New title");
+            expect(response.data.title).toEqual('New title');
             expect(response.status).toEqual(200);
         });
     });
 
     describe(`${METHODS.PUT} method`, () => {
-        test(`Should correctly update post with id ${POST_ID} by method ${METHODS.PUT}`, async () => {
+        test(`Should correctly update post with id ${POST_ID} by method "${METHODS.PUT}"`, async () => {
             try {
-                response = await client.request(METHODS.PUT, { url: `/posts/${POST_ID}`, body: POST, headers: { "Content-Type": "application/json", } });
+                response = await client.request(METHODS.PUT, { url: `/posts/${POST_ID}`, body: POST, headers: { 'Content-Type': 'application/json', } });
             } catch (error: any) {
                 throw new Error(error.message);
             }
@@ -96,9 +97,9 @@ describe("Test HTTP methods", () => {
             }
         });
 
-        test(`Should correctly handle non-existing post while updating by method ${METHODS.PUT}`, async () => {
+        test(`Should correctly handle non-existing post while updating by method "${METHODS.PUT}"`, async () => {
             try {
-                response = await client.request(METHODS.PUT, { url: `/posts/${POSTS_QUANTITY + 1}`, body: POST, headers: { "Content-Type": "application/json", } });
+                response = await client.request(METHODS.PUT, { url: `/posts/${POSTS_QUANTITY + 1}`, body: POST, headers: { 'Content-Type': 'application/json', } });
             } catch (error: any) {
                 expect(error.response.status).toEqual(500);
             }
@@ -106,7 +107,7 @@ describe("Test HTTP methods", () => {
     });
 
     describe(`${METHODS.DELETE} method`, () => {
-        test(`Should correctly delete post with id ${POST_ID}`, async () => {
+        test(`Should correctly delete post with "${POST_ID}" id`, async () => {
             try {
                 response = await client.request(METHODS.DELETE, { url: `posts/${POST_ID}` });
             } catch (error: any) {

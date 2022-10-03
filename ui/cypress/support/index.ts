@@ -1,7 +1,7 @@
-/// <reference types="cypress" />
+/// <reference types='cypress' />
 
-import "@shelex/cypress-allure-plugin";
-import "./commands";
+import '@shelex/cypress-allure-plugin';
+import './commands';
 
 declare global {
     namespace Cypress {

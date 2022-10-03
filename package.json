@@ -6,7 +6,7 @@
   "scripts": {
     "unit:test": "jest --config unit/jest.config.json",
     "api:test": "jest --config api/jest.config.json",
-    "ui:run": "cypress run --browser chrome --headed --config-file=./ui/cypress.config.ts",
+    "ui:run": "rm -rf ui/cypress/assets && cypress run --browser chrome --headed --config-file=./ui/cypress.config.ts",
     "ui:open": "cypress open --config-file=./ui/cypress.config.ts",
     "ui:report": "allure generate ui/cypress/assets/allure-results --clean -o ui/cypress/assets/allure-report && allure open ui/cypress/assets/allure-report"
   },
@@ -31,6 +31,8 @@
     "axios-logger": "^2.6.1",
     "chai": "^4.3.6",
     "cypress": "^10.9.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.1",
     "dotenv": "^16.0.2",
     "eslint": "^8.24.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
@@ -39,7 +41,8 @@
     "eslint-plugin-promise": "^6.0.1",
     "http": "^0.0.1-security",
     "https": "^1.0.0",
-    "jest": "^29.0.3",
+    "jest": "^29.1.2",
+    "log4js": "^6.7.0",
     "randomstring": "^1.2.2",
     "ts-jest": "^29.0.1",
     "ts-node": "^10.9.1",
