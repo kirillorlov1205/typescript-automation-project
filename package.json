@@ -7,7 +7,6 @@
     "unit:test": "jest --config unit/jest.config.json",
     "api:test": "jest --config api/jest.config.json",
     "ui:run": "rm -rf ui/cypress/assets && cypress run --browser chrome --headed --config-file=./ui/cypress.config.ts",
-    "ui:run-without-rm": "cypress run --browser chrome --headed --config-file=./ui/cypress.config.ts",
     "ui:open": "cypress open --config-file=./ui/cypress.config.ts",
     "ui:report": "allure generate ui/cypress/assets/allure-results --clean -o ui/cypress/assets/allure-report && allure open ui/cypress/assets/allure-report"
   },

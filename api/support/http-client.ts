@@ -6,7 +6,7 @@ import * as axiosLogger from 'axios-Logger';
 
 const instanse = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com',
-    timeout: 10000,
+    timeout: 5000,
     httpAgent: new http.Agent({ keepAlive: true }),
     httpsAgent: new https.Agent({ keepAlive: true })
 });
