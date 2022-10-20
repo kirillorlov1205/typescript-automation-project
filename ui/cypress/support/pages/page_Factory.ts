@@ -3,7 +3,7 @@ import { HomePage } from './home_Page';
 import { LoginPage } from './login_Page';
 
 export class PageFactory {
-    static getPage(pageName: PAGES) {
+    public static getPage(pageName: PAGES) {
         switch (pageName) {
             case PAGES.HOME:
                 return new HomePage();

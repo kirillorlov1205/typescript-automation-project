@@ -1,60 +1,67 @@
-import {expect, test} from '@jest/globals';
+import { expect, test } from '@jest/globals';
 import { registrationForm } from '../src/registrationForm';
-import { TEST_USER } from '../src/utils/constants';
+import { INVALID_EMAILS, INVALID_LOGINS, INVALID_PASSWORDS, VALID_EMAILS, VALID_LOGINS, VALID_PASSWORDS, VALID_TEST_USER, VALIDATION_MESSAGES } from '../src/utils/types';
 
-const successfullRegistrationMessage = 'User has been registered seccessfully';
-const invalidLoginFormatMessage = 'Login should be between 2 to 12 characters';
-const invalidPasswordFormatMessage = 'Password should be between 6 to 12 characters';
-const ConfirmPasswordDoesNotMatchMessage = 'Confirm password should match password';
+
 const randomstring = require('randomstring');
 
 describe('Registration tests', () => {
 
     test('Should register the user with valid info successfully', () => {
-        expect(registrationForm.reqister(TEST_USER.login, TEST_USER.password, TEST_USER.password)).toEqual(successfullRegistrationMessage);
+        expect(registrationForm.reqister(VALID_TEST_USER.email, VALID_TEST_USER.login, VALID_TEST_USER.password, VALID_TEST_USER.password)).toEqual(VALIDATION_MESSAGES.SUCCESSFULL_REGISTRATION_MESSAGE);
     });
 
-    describe('Registration tests for login field', () => {
-
-        const loginPositiveBoundaryValues = [2, 3, 11, 12];
-        loginPositiveBoundaryValues.forEach((value) => {
-            test(`Should register the user successfully while registration with login containing (${value}) characters and valid password`, () => {
-                expect(registrationForm.reqister(randomstring.generate(value), TEST_USER.password, TEST_USER.password)).toEqual(successfullRegistrationMessage);
+    describe('Registration tests for Email field', () => {
+        for (const value in VALID_EMAILS) {
+            const email = VALID_EMAILS[value as keyof typeof VALID_EMAILS];
+            test(`Should register the user successfully while registration with email ${value} - "${email}" and valid data`, () => {
+                expect(registrationForm.reqister(email, VALID_TEST_USER.login, VALID_TEST_USER.password, VALID_TEST_USER.password)).toEqual(VALIDATION_MESSAGES.SUCCESSFULL_REGISTRATION_MESSAGE);
             });
-        });
+        }
 
-        const loginNegativeBoundaryValues = [0, 1, 13];
-        loginNegativeBoundaryValues.forEach((value) => {
-            test(`Should show login validation message "${invalidLoginFormatMessage}" while registration with login containing (${value}) characters`, () => {
-                expect(registrationForm.reqister(randomstring.generate(value), TEST_USER.password, TEST_USER.password)).toEqual(invalidLoginFormatMessage);
+        for (const value in INVALID_EMAILS) {
+            const email = INVALID_EMAILS[value as keyof typeof INVALID_EMAILS];
+            test(`Should show Email validation message "${VALIDATION_MESSAGES.INVALIDE_MAIL_FORMAT_MESSAGE}" while registration with email ${value} - "${email}" and valid data`, () => {
+                expect(registrationForm.reqister(email, VALID_TEST_USER.login, VALID_TEST_USER.password, VALID_TEST_USER.password)).toEqual(VALIDATION_MESSAGES.INVALIDE_MAIL_FORMAT_MESSAGE);
             });
-        });
+        }
     });
 
-    describe('Registration tests for password field', () => {
-
-        let password;
-
-        const passwordPositiveBoundaryValues = [6, 7, 11, 12];
-        passwordPositiveBoundaryValues.forEach((value) => {
-            test(`Should register the user successfully while registration with password containing (${value}) characters and valid login`, () => {
-                password = randomstring.generate(value);
-                expect(registrationForm.reqister(TEST_USER.login, password, password)).toEqual(successfullRegistrationMessage);
+    describe('Registration tests for Login field', () => {
+        for (const value in VALID_LOGINS) {
+            const login = VALID_LOGINS[value as keyof typeof VALID_LOGINS];
+            test(`Should register the user successfully while registration with login ${value} - "${login}" and valid data`, () => {
+                expect(registrationForm.reqister(VALID_TEST_USER.email, login, VALID_TEST_USER.password, VALID_TEST_USER.password)).toEqual(VALIDATION_MESSAGES.SUCCESSFULL_REGISTRATION_MESSAGE);
             });
-        });
+        }
 
-        const passwordNegativeBoundaryValues = [0, 5, 13];
-        passwordNegativeBoundaryValues.forEach((value) => {
-            test(`Should show password validation message "${invalidPasswordFormatMessage}" while registration with password containing (${value}) characters`, () => {
-                password = randomstring.generate(value);
-                expect(registrationForm.reqister(TEST_USER.login, password, password)).toEqual(invalidPasswordFormatMessage);
+        for (const value in INVALID_LOGINS) {
+            const login = INVALID_LOGINS[value as keyof typeof INVALID_LOGINS];
+            test(`Should show login validation message "${VALIDATION_MESSAGES.INVALID_LOGIN_FORMAT_MESSAGE}" while registration with login ${value} - "${login}" and valid data`, () => {
+                expect(registrationForm.reqister(VALID_TEST_USER.email, login, VALID_TEST_USER.password, VALID_TEST_USER.password)).toEqual(VALIDATION_MESSAGES.INVALID_LOGIN_FORMAT_MESSAGE);
             });
-        });
+        }
     });
 
-    describe('Registration tests for confirm password field', () => {
-        test(`Should show confirm password validation message "${ConfirmPasswordDoesNotMatchMessage}" while registration with confirm password that doesn't match password`, () => {
-            expect(registrationForm.reqister(TEST_USER.login, TEST_USER.password, randomstring.generate(7))).toEqual(ConfirmPasswordDoesNotMatchMessage);
+    describe('Registration tests for Password field', () => {
+        for (const value in VALID_PASSWORDS) {
+            const password = VALID_PASSWORDS[value as keyof typeof VALID_PASSWORDS];
+            test(`Should register the user successfully while registration with password ${value} - "${password}" and valid data`, () => {
+                expect(registrationForm.reqister(VALID_TEST_USER.email, VALID_TEST_USER.login, password, password)).toEqual(VALIDATION_MESSAGES.SUCCESSFULL_REGISTRATION_MESSAGE);
+            });
+        }
+
+        for (const value in INVALID_PASSWORDS) {
+            const password = INVALID_PASSWORDS[value as keyof typeof INVALID_PASSWORDS];
+            test(`Should show password validation message "${VALIDATION_MESSAGES.INVALID_PASSWORD_FORMAT_MESSAGE}" while registration with password ${value} - "${password}" and valid data`, () => {
+                expect(registrationForm.reqister(VALID_TEST_USER.email, VALID_TEST_USER.login, password, password)).toEqual(VALIDATION_MESSAGES.INVALID_PASSWORD_FORMAT_MESSAGE);
+            });
+        }
+    });
+
+    describe('Registration tests for Confirm Password field', () => {
+        test(`Should show confirm password validation message "${VALIDATION_MESSAGES.CONFIRM_PASSWORD_DOES_NOT_MATCH_MESSAGE}" while registration with confirm password that doesn't match password`, () => {
+            expect(registrationForm.reqister(VALID_TEST_USER.email, VALID_TEST_USER.login, VALID_TEST_USER.password, randomstring.generate(8))).toEqual(VALIDATION_MESSAGES.CONFIRM_PASSWORD_DOES_NOT_MATCH_MESSAGE);
         });
     });
 });

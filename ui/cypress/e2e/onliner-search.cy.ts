@@ -1,7 +1,6 @@
 import { HomePage } from '../support/pages/home_Page';
 import { PageFactory } from '../support/pages/page_Factory';
 import { PAGES, SEARCH_ITEMS } from '../support/types/types';
-require('cypress-xpath');
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage;
 const textForTest = 'test';

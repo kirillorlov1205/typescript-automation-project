@@ -8,7 +8,7 @@ export class BasePage {
     public navigationBar: NavigationBar;
     public searchField: SearchField;
 
-    constructor() {
+    protected constructor() {
         this.navigationBar = new NavigationBar();
         this.searchField = new SearchField();
     }

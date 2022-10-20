@@ -1,38 +1,38 @@
 export class RegistrationForm {
 
-    constructor() { }
+    public constructor() { }
 
-    reqister(login: string, password: string, confirmPassword: string) {
-        if (this.loginValidation(login)) {
-            return 'Login should be between 2 to 12 characters';
-        } else if (this.passwordValidation(password)) {
-            return 'Password should be between 6 to 12 characters';
-        } else if (this.confirmPasswordValidation(password, confirmPassword)) {
-            return 'Confirm password should match password';
+    public reqister(email: string, login: string, password: string, confirmPassword: string) {
+        if (!this.emailValidation(email)) {
+            return 'Please provide valid email (example: Tonny@gmail.com)';
+        } else if (!this.loginValidation(login)) {
+            return 'Login should have minimum 6 characters, maximum 12 characters, at least one uppercase letter, one lowercase letter';
+        } else if (!this.passwordValidation(password)) {
+            return 'Password should have minimum 8 characters, maximum 12 characters, at least one uppercase letter, one lowercase letter and one number';
+        } else if (!this.confirmPasswordValidation(password, confirmPassword)) {
+            return 'Passwords do not match. Please, try again';
         } else {
             return 'User has been registered seccessfully';
         }
     }
 
-    loginValidation(login: string): boolean {
-        if (!login || login.length > 12 || login.length < 2) {
-            return true;
-        }
-        return false;
+    private emailValidation(email: string): boolean {
+        const emailRegEx = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
+        return emailRegEx.test(email);
     }
 
-    passwordValidation(password: string) {
-        if (!password || password.length > 12 || password.length < 6) {
-            return true;
-        }
-        return false;
+    private loginValidation(login: string): boolean {
+        const loginRegEx = /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{6,12}$/;
+        return loginRegEx.test(login);
     }
 
-    confirmPasswordValidation(password: string, confirmPassword: string) {
-        if (confirmPassword !== password) {
-            return true;
-        }
-        return false;
+    private passwordValidation(password: string) {
+        const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,12}$/;
+        return passwordRegEx.test(password);   
+    }
+
+    private confirmPasswordValidation(password: string, confirmPassword: string) {
+        return confirmPassword === password;
     }
 }
 
