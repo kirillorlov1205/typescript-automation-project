@@ -15,6 +15,10 @@
         "wdio-geckodriver-service": "^4.0.0"
     },
     "scripts": {
-        "wdio": "wdio config/wdio.conf.ts"
+        "wdio": "wdio config/wdio.conf.ts",
+        "wdio-report": "allure generate assets/allure-results --clean -o assets/allure-report && allure open assets/allure-report"
+    },
+    "dependencies": {
+        "allure-commandline": "^2.18.1"
     }
 }

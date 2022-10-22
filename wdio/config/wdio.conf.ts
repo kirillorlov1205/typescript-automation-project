@@ -165,7 +165,7 @@ export const config: Options.Testrunner = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec',['allure', {outputDir: 'allure-results'}]],
+    reporters: ['spec',['allure', {outputDir: 'assets/allure-results'}]],
 
 
     //
@@ -209,8 +209,8 @@ export const config: Options.Testrunner = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
      onPrepare: function () {
-        rmSync("allure-report", {recursive: true, force: true});
-        rmSync("allure-results", {recursive: true, force: true})
+        rmSync("assets/allure-report", {recursive: true, force: true});
+        rmSync("assets/allure-results", {recursive: true, force: true})
     },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
