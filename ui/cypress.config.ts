@@ -1,7 +1,7 @@
-import { defineConfig } from 'cypress';
-import AllureWriter from '@shelex/cypress-allure-plugin/writer';
-import { ASSETS_FOLDER, BASE_URL, DEFAULT_WAITNG_TIME } from './cypress/support/constants/constants';
-import { logger } from './cypress/support/logger';
+import { defineConfig } from 'cypress'
+import AllureWriter from '@shelex/cypress-allure-plugin/writer'
+import { ASSETS_FOLDER, BASE_URL, DEFAULT_WAITNG_TIME } from './cypress/support/constants/constants'
+import { logger } from './cypress/support/logger'
 
 export default defineConfig({
   e2e: {
@@ -19,16 +19,16 @@ export default defineConfig({
     setupNodeEvents(on, config) {
       on('task', {
         log(message) {
-          logger.info(message);
-          return null;
+          logger.info(message)
+          return null
         },
-      });
-      AllureWriter(on, config);
-      return config;
+      })
+      AllureWriter(on, config)
+      return config
     },
     env: {
       allure: 'true',
       allureResultsPath: 'ui/cypress/assets/allure-results'
     }
   }
-});
+})

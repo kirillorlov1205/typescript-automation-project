@@ -1,5 +1,5 @@
-import * as log4js from 'log4js';
-const dateFormat = '%d{[dd/MM/yyyy] [hh:mm:ss]} [%p] - %m';
+import * as log4js from 'log4js'
+const dateFormat = '%d{[dd/MM/yyyy] [hh:mm:ss]} [%p] - %m'
 
 log4js.configure({
     appenders: {
@@ -23,6 +23,6 @@ log4js.configure({
             appenders: ['fulllog', 'console'], level: 'info'
         }
     }
-});
+})
 
-export const logger = log4js.getLogger();
+export const logger = log4js.getLogger()
