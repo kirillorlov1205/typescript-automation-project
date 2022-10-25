@@ -4,6 +4,7 @@ export enum NAVIGATION_ITEMS {
     REALT = 'https://r.onliner.by/pk',
     TASKS = 'https://s.onliner.by/tasks',
     BARAHOLKA = 'https://baraholka.onliner.by/',
+    FORUM = 'https://forum.onliner.by/'
 }
 
 export enum PAGES {

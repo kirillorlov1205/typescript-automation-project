@@ -16,6 +16,7 @@ describe('Onliner navigation bar tests', () => {
         'Realt': 'Продажа',
         'Tasks': 'Заказы',
         'Baraholka': 'Барахолка',
+        'Forum': 'Форум'
     }
 
     for (const pageTitle in pageTitlesMap) {

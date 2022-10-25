@@ -41,6 +41,8 @@ export class BasePage {
                 return cy.get('a[href= "/tasks"] span.project-navigation__sign')
             case 'Baraholka':
                 return cy.get('div.b-mnforum-header-i h1')
+            case 'Forum':
+                return cy.get('h1.m-title')
             default:
                 throw new Error('No such header')
         }
