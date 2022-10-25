@@ -1,6 +1,7 @@
 import { client } from '../support/http-client'
 import { METHODS, Post } from '../support/types'
-import {expect, test} from '@jest/globals'
+import { expect, test } from '@jest/globals'
+import { AxiosResponse } from 'axios'
 
 const POSTS_QUANTITY = 100
 const USERS_QUANTITY = 10
@@ -11,7 +12,7 @@ const POST: Post = {
     userId: Math.floor(Math.random() * USERS_QUANTITY) + 1
 }
 
-let response
+let response: AxiosResponse
 
 describe('Test HTTP methods', () => {
 

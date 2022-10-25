@@ -1,16 +1,18 @@
+import { VALIDATION_MESSAGES } from './utils/types'
+
 export class RegistrationForm {
 
     public constructor() { }
 
-    public reqister(email: string, login: string, password: string, confirmPassword: string) {
-        if (!this.emailValidation(email)) {
-            return 'Please provide valid email (example: Tonny@gmail.com)'
-        } else if (!this.loginValidation(login)) {
-            return 'Login should have minimum 6 characters, maximum 12 characters, at least one uppercase letter, one lowercase letter'
-        } else if (!this.passwordValidation(password)) {
-            return 'Password should have minimum 8 characters, maximum 12 characters, at least one uppercase letter, one lowercase letter and one number'
-        } else if (!this.confirmPasswordValidation(password, confirmPassword)) {
-            return 'Passwords do not match. Please, try again'
+    public reqister(user: { email: string, login: string, password: string, confirmPassword: string }) {
+        if (!this.emailValidation(user.email)) {
+            return VALIDATION_MESSAGES.INVALIDE_MAIL_FORMAT_MESSAGE
+        } else if (!this.loginValidation(user.login)) {
+            return VALIDATION_MESSAGES.INVALID_LOGIN_FORMAT_MESSAGE
+        } else if (!this.passwordValidation(user.password)) {
+            return VALIDATION_MESSAGES.INVALID_PASSWORD_FORMAT_MESSAGE
+        } else if (!this.confirmPasswordValidation(user.password, user.confirmPassword)) {
+            return VALIDATION_MESSAGES.CONFIRM_PASSWORD_DOES_NOT_MATCH_MESSAGE
         } else {
             return 'User has been registered seccessfully'
         }
@@ -28,7 +30,7 @@ export class RegistrationForm {
 
     private passwordValidation(password: string) {
         const passwordRegEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,12}$/
-        return passwordRegEx.test(password)   
+        return passwordRegEx.test(password)
     }
 
     private confirmPasswordValidation(password: string, confirmPassword: string) {

@@ -48,7 +48,7 @@ export const INVALID_EMAILS = {
 }
 
 export enum VALIDATION_MESSAGES {
-    SUCCESSFULL_REGISTRATION_MESSAGE  = 'User has been registered seccessfully',
+    SUCCESSFULL_REGISTRATION_MESSAGE = 'User has been registered seccessfully',
     INVALIDE_MAIL_FORMAT_MESSAGE = 'Please provide valid email (example: Tonny@gmail.com)',
     INVALID_LOGIN_FORMAT_MESSAGE = 'Login should have minimum 6 characters, maximum 12 characters, at least one uppercase letter, one lowercase letter',
     INVALID_PASSWORD_FORMAT_MESSAGE = 'Password should have minimum 8 characters, maximum 12 characters, at least one uppercase letter, one lowercase letter and one number',
