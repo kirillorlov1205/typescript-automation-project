@@ -4,7 +4,7 @@ export class RegistrationForm {
 
     public constructor() { }
 
-    public reqister(user: { email: string, login: string, password: string, confirmPassword: string }) {
+    public register(user: { email: string, login: string, password: string, confirmPassword: string }) {
         if (!this.emailValidation(user.email)) {
             return VALIDATION_MESSAGES.INVALIDE_MAIL_FORMAT_MESSAGE
         } else if (!this.loginValidation(user.login)) {
@@ -14,7 +14,7 @@ export class RegistrationForm {
         } else if (!this.confirmPasswordValidation(user.password, user.confirmPassword)) {
             return VALIDATION_MESSAGES.CONFIRM_PASSWORD_DOES_NOT_MATCH_MESSAGE
         } else {
-            return 'User has been registered seccessfully'
+            return VALIDATION_MESSAGES.SUCCESSFULL_REGISTRATION_MESSAGE
         }
     }
 

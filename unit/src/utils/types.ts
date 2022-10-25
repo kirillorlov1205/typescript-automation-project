@@ -2,6 +2,7 @@ export const VALID_TEST_USER = {
     email: 'testEmail@gmail.com',
     login: 'Login12',
     password: 'Password12',
+    confirmPassword: 'Password12'
 }
 
 export const INVALID_PASSWORDS = {
