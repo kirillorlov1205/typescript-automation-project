@@ -1,6 +1,6 @@
 {
   "extension": ["ts"],
-  "spec": ["selenium/**/*spec.ts"],
+  "spec": ["selenium/**/navigation.spec.ts"],
   "require": ["ts-node/register", "dotenv/config"],
   "timeout": "50000"
 }
