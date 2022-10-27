@@ -1,0 +1,6 @@
+{
+  "extension": ["ts"],
+  "spec": ["selenium/**/*spec.ts"],
+  "require": ["ts-node/register", "dotenv/config"],
+  "timeout": "50000"
+}
