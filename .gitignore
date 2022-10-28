@@ -1,0 +1,8 @@
+node_modules
+README
+**/test-results
+ui/cypress/assets
+ui/logs
+allure-report
+allure-results
+**/*.exe
