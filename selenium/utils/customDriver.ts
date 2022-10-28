@@ -1,4 +1,4 @@
-import { By, Locator, until, WebDriver } from "selenium-webdriver"
+import { By, Locator, until, WebDriver, WebElement } from "selenium-webdriver"
 import { driver } from "../configs/driver"
 import { DEFAULT_WAITNG_TIME } from "./constants"
 import { SELECTOR_TYPES } from "./types"
@@ -33,6 +33,11 @@ class CustomDriver {
 
     public async takeScreenshot() {
         return await this.driver.takeScreenshot()
+    }
+
+    public async switchToIframe(selectorType: SELECTOR_TYPES, locator: string) {
+        const iframe: WebElement = await this.findElement(selectorType, locator)
+        return await this.driver.switchTo().frame(iframe)
     }
 }
 
