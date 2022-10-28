@@ -6,3 +6,4 @@ ui/logs
 allure-report
 allure-results
 **/*.exe
+selenium/assets

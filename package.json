@@ -8,7 +8,8 @@
     "api:test": "jest --config api/jest.config.json",
     "ui:run": "rm -rf ui/cypress/assets && cypress run --browser chrome --headless --config-file=./ui/cypress.config.ts",
     "ui:open": "cypress open --config-file=./ui/cypress.config.ts",
-    "ui:report": "allure generate ui/cypress/assets/allure-results --clean -o ui/cypress/assets/allure-report && allure open ui/cypress/assets/allure-report"
+    "ui:report": "allure generate ui/cypress/assets/allure-results --clean -o ui/cypress/assets/allure-report && allure open ui/cypress/assets/allure-report",
+    "selenium": "mocha --config selenium/configs/.mocharc.json"
   },
   "repository": {
     "type": "git",
@@ -47,6 +48,12 @@
     "randomstring": "^1.2.2",
     "ts-jest": "^29.0.1",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.3"
-  }
+    "typescript": "^4.8.3",
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^10.0.0",
+    "chromedriver": "^107.0.0",
+    "@types/selenium-webdriver": "^4.1.6",
+    "mocha": "^10.1.0",
+    "selenium-webdriver": "^4.5.0"
+}
 }
