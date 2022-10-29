@@ -31,7 +31,7 @@ describe('Login page test', () => {
     it('Should successfully log the use in and show protection pop up while login with correct credentials', async () => {
         await homePage.navigationBar.clickLoginButton()
         await loginPage.login(TEST_USER.email, TEST_USER.password)
-        expect(await (await loginPage.getProtectionPopUpMessage()).getText()).to.have.string(`Давайте проверим, вы робот или нет`)
+        expect(await (await loginPage.getProtectionPopUpMessage()).getText()).to.have.string('Давайте проверим, вы робот или нет')
     })
 
     it(`Should show '${emptyEmailValidationMessage}' validation message while loging in with valid email and empty password`, async () => {

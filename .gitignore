@@ -7,3 +7,7 @@ allure-report
 allure-results
 **/*.exe
 selenium/assets
+/test-results/
+/playwright-report/
+/playwright/.cache/
+/playwright/configs/playwright

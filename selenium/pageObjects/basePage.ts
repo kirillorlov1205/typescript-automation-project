@@ -35,13 +35,15 @@ export class BasePage {
                 return await customDriver.findElement(SELECTOR_TYPES.CSS, ('`a[href= "/tasks"] span.project-navigation__sign`'))
             case 'Baraholka':
                 return await customDriver.findElement(SELECTOR_TYPES.CSS, ('div.b-mnforum-header-i h1'))
+            case 'Forum':
+                return await customDriver.findElement(SELECTOR_TYPES.CSS, ('h1.m-title'))
             default:
                 throw new Error('No such header');
         }
     }
 
     public async waitTillPageHeaderIncludeText(pageHeader: string, headerText: string) {
-        let text = await (await this.getPageHeaderByName(pageHeader)).getText()
+        const text = await (await this.getPageHeaderByName(pageHeader)).getText()
         expect(text).to.include(headerText)
     }
 }

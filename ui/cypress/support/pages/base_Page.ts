@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 import { NavigationBar } from './elements/navigation_Bar'
-import { SearchField } from './elements/search_field'
+import { SearchField } from './elements/search_Field'
 
 export class BasePage {
 
