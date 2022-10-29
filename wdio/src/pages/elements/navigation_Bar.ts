@@ -1,9 +1,9 @@
-import { NAVIGATION_ITEMS } from "../../support/types";
+import { NAVIGATION_ITEMS } from '../../support/types';
 
 export class NavigationBar {
 
     public getNavigationItemByInnerLink = async (link: NAVIGATION_ITEMS) => {
-        return await $(`a[href = "${link}"] span.b-main-navigation__text`);
+        return await $(`a[href = '${link}'] span.b-main-navigation__text`);
     }
 
     public clickOnNavigationItemByInnerLink = async (link: NAVIGATION_ITEMS) => {

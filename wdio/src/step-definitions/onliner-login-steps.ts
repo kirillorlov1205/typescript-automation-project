@@ -1,9 +1,9 @@
-import { Then, When } from "@wdio/cucumber-framework";
-import { HomePage } from "../pages/home_Page";
-import { LoginPage } from "../pages/login_Page";
-import { PageFactory } from "../pages/page-Factory";
-import { TEST_USER } from "../support/constants";
-import { PAGES } from "../support/types";
+import { Then, When } from '@wdio/cucumber-framework';
+import { HomePage } from '../pages/home_Page';
+import { LoginPage } from '../pages/login_Page';
+import { PageFactory } from '../pages/page-Factory';
+import { TEST_USER } from '../support/constants';
+import { PAGES } from '../support/types';
 
 const homePage = PageFactory.getPage(PAGES.HOME) as HomePage;
 const loginPage = PageFactory.getPage(PAGES.LOGIN) as LoginPage;

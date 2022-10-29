@@ -28,8 +28,8 @@ export const config: Options.Testrunner = {
             transpileOnly: true,
             project: 'tsconfig.json'
         }
-        // tsconfig-paths is only used if "tsConfigPathsOpts" are provided, if you
-        // do please make sure "tsconfig-paths" is installed as dependency
+        // tsconfig-paths is only used if 'tsConfigPathsOpts' are provided, if you
+        // do please make sure 'tsconfig-paths' is installed as dependency
         // tsConfigPathsOpts: {
         //     baseUrl: './'
         // }
@@ -175,7 +175,7 @@ export const config: Options.Testrunner = {
         require: ['src/step-definitions/**/*.ts'],
         // <boolean> show full backtrace for errors
         backtrace: false,
-        // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
+        // <string[]> ('extension:module') require files with the given EXTENSION after requiring MODULE (repeatable)
         requireModule: [],
         // <boolean> invoke formatters without executing steps
         dryRun: false,
@@ -209,8 +209,8 @@ export const config: Options.Testrunner = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
      onPrepare: function () {
-        rmSync("assets/allure-report", {recursive: true, force: true});
-        rmSync("assets/allure-results", {recursive: true, force: true})
+        rmSync('assets/allure-report', {recursive: true, force: true});
+        rmSync('assets/allure-results', {recursive: true, force: true})
     },
     /**
      * Gets executed before a worker process is spawned and can be used to initialise specific service
