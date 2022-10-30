@@ -1,23 +1,23 @@
-import { Then, When } from '@wdio/cucumber-framework';
-import { HomePage } from '../pages/home_Page';
-import { LoginPage } from '../pages/login_Page';
-import { PageFactory } from '../pages/page-Factory';
-import { TEST_USER } from '../support/constants';
-import { PAGES } from '../support/types';
+import { Then, When } from '@wdio/cucumber-framework'
+import { HomePage } from '../pages/home_Page'
+import { LoginPage } from '../pages/login_Page'
+import { PageFactory } from '../pages/page-Factory'
+import { TEST_USER } from '../support/constants'
+import { PAGES } from '../support/types'
 
-const homePage = PageFactory.getPage(PAGES.HOME) as HomePage;
-const loginPage = PageFactory.getPage(PAGES.LOGIN) as LoginPage;
+const homePage = PageFactory.getPage(PAGES.HOME) as HomePage
+const loginPage = PageFactory.getPage(PAGES.LOGIN) as LoginPage
 
 When(/^The user clicks on Login button$/, async () => {
-    await homePage.navigationBar.clickLoginButton();
+    await homePage.navigationBar.clickLoginButton()
 })
 
 Then(/^The user sees Login page$/, async () => {
-    await expect(loginPage.getEmailField()).toBeDisabled();
+    await expect(loginPage.getEmailField()).toBeDisabled()
 })
 
 When(/^The user clicks Submit button$/, async () => {
-    await loginPage.submitForm();
+    await loginPage.submitForm()
 })
 
 Then(/^The user successfully logged in and sees protection pop-up$/, async () => {
@@ -25,24 +25,24 @@ Then(/^The user successfully logged in and sees protection pop-up$/, async () =>
 })
 
 Then(/^The user sees validation message '(.+)'$/, async (message: string) => {
-    await expect(loginPage.getValidationMessage()).toHaveText(message);
+    await expect(loginPage.getValidationMessage()).toHaveText(message)
 })
 
 When(/^The user logs in with valid Email and valid Password$/, async () => {
-    await homePage.navigationBar.clickLoginButton();
-    await loginPage.fillEmailField(TEST_USER.email);
-    await loginPage.fillPasswordField(TEST_USER.password);
-    await loginPage.submitForm();
+    await homePage.navigationBar.clickLoginButton()
+    await loginPage.fillEmailField(TEST_USER.email)
+    await loginPage.fillPasswordField(TEST_USER.password)
+    await loginPage.submitForm()
 })
 
 When(/^The user logs in with valid Email and empty Password$/, async () => {
-    await homePage.navigationBar.clickLoginButton();
-    await loginPage.fillEmailField(TEST_USER.email);
-    await loginPage.submitForm();
+    await homePage.navigationBar.clickLoginButton()
+    await loginPage.fillEmailField(TEST_USER.email)
+    await loginPage.submitForm()
 })
 
 When(/^The user logs in with empty Email and valid Password$/, async () => {
-    await homePage.navigationBar.clickLoginButton();
-    await loginPage.fillPasswordField(TEST_USER.password);
-    await loginPage.submitForm();
+    await homePage.navigationBar.clickLoginButton()
+    await loginPage.fillPasswordField(TEST_USER.password)
+    await loginPage.submitForm()
 })

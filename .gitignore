@@ -1,8 +1,8 @@
 node_modules
 README
 **/test-results
-ui/cypress/assets
-ui/logs
+cypress/assets
+logs
 allure-report
 allure-results
 **/*.exe

@@ -1,7 +1,7 @@
-import { By, Locator, until, WebDriver, WebElement } from "selenium-webdriver"
-import { driver } from "../configs/driver"
-import { DEFAULT_WAITNG_TIME } from "./constants"
-import { SELECTOR_TYPES } from "./types"
+import { By, Locator, until, WebDriver, WebElement } from 'selenium-webdriver'
+import { driver } from '../configs/driver'
+import { DEFAULT_WAITNG_TIME } from './constants'
+import { SELECTOR_TYPES } from './types'
 
 class CustomDriver {
     protected readonly driver: WebDriver
