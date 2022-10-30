@@ -2,19 +2,19 @@
 Feature: Onliner login
 
     Background:
-        Given the User opens web page https://www.onliner.by
+        Given The user opens web page https://www.onliner.by
 
     @validCredentials
     Scenario: Valid credentials
-        When the User logs in with valid Email and valid Password
-        Then the User successfully logged in and sees protection pop-up
+        When The user logs in with valid Email and valid Password
+        Then The user successfully logged in and sees protection pop-up
 
     @emptyEmail
     Scenario: Empty email
-        When the User logs in with empty Email and valid Password
-        Then the User sees validation message 'Укажите ник или e-mail'
+        When The user logs in with empty Email and valid Password
+        Then The user sees validation message 'Укажите ник или e-mail'
 
     @emptyPassword
     Scenario: Empty password
-        When the User logs in with valid Email and empty Password
-        Then the User sees validation message 'Укажите пароль'
+        When The user logs in with valid Email and empty Password
+        Then The user sees validation message 'Укажите пароль'

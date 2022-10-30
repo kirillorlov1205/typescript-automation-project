@@ -2,9 +2,9 @@
 Feature: Onliner Home Page Navigation
 
     Scenario Outline: As a user, i can open page by Navigation bar
-        Given the User opens web page https://www.onliner.by
-        When the User clicks on <PageLink> navigation button
-        Then the User sees <PageName> page and page header has text <HeaderText>
+        Given The user opens web page https://www.onliner.by
+        When The user clicks on <PageLink> navigation button
+        Then The user sees <PageName> page and page header has text <HeaderText>
 
         Examples:
             | PageLink                      | PageName  | HeaderText     |

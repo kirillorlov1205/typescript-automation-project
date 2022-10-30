@@ -18,3 +18,9 @@ export enum PAGE_HEADER {
     TASKS = 'Заказы',
     BARAHOLKA = 'Барахолка',
 }
+
+export enum SEARCH_ITEMS {
+    NEWS = 'в новостях',
+    BARAHOLKA = 'на барахолке',
+    FORUM = 'на форуме',
+}
