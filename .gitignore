@@ -11,3 +11,4 @@ selenium/assets
 /playwright-report/
 /playwright/.cache/
 /playwright/configs/playwright
+/api/coverage

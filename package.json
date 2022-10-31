@@ -6,6 +6,7 @@
   "scripts": {
     "unit:test": "jest --config unit/jest.config.json",
     "api:test": "jest --config api/jest.config.json",
+    "api:coverage": "jest --config api/jest.config.json --coverage",
     "cy:run": "rm -rf cypress/assets && cypress run --browser chrome --headless --config-file=./cypress/cypress.config.ts",
     "cy:open": "cypress open --config-file=./cypress/cypress.config.ts",
     "cy:report": "allure generate cypress/assets/allure-results --clean -o cypress/assets/allure-report && allure open cypress/assets/allure-report",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/kirillorlov1205/finalProject#readme",
   "devDependencies": {
+    "@jest/globals": "^29.2.2",
     "@playwright/test": "^1.27.1",
     "@shelex/cypress-allure-plugin": "^2.31.0",
     "@types/chai": "^4.3.3",
@@ -53,6 +55,7 @@
     "http": "^0.0.1-security",
     "https": "^1.0.0",
     "jest": "^29.1.2",
+    "jest-html-reporter": "^3.7.0",
     "log4js": "^6.7.0",
     "mocha": "^10.1.0",
     "playwright": "^1.27.1",
