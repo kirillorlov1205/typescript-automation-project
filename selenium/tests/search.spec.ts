@@ -2,21 +2,22 @@ import { HomePage } from '../pageObjects/homePage'
 import { PAGES, SEARCH_ITEMS } from '../utils/types'
 import { expect } from 'chai'
 import { mkdirSync, rmSync, writeFile } from 'fs'
-import { Context } from 'mocha'
+import { after, Context } from 'mocha'
 import { PageFactory } from '../pageObjects/pageFactory'
 import { customDriver } from '../utils/customDriver'
+import { SCREEN_DIR } from '../utils/constants'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage
-const searchScreenDir = 'selenium/assets/searchScreenDir'
+const suitName = 'Search tests';
 let totalCounter = 1
 const textForTest = 'test'
 
-describe('Search test', () => {
+describe(suitName, () => {
 
     before(async () => {
         await homePage.maximizeWindow()
-        rmSync(searchScreenDir, { recursive: true, force: true })
-        mkdirSync(searchScreenDir, { recursive: true })
+        rmSync(`${SCREEN_DIR}/${suitName}`, { recursive: true, force: true })
+        mkdirSync(`${SCREEN_DIR}/${suitName}`, { recursive: true })
     })
 
     beforeEach(async () => {
@@ -52,13 +53,13 @@ describe('Search test', () => {
     })
 
     afterEach(async function () {
-        writeFile(`${searchScreenDir}/${totalCounter++}. ${(this as Context).currentTest?.title}.png`,
+        writeFile(`${SCREEN_DIR}/${suitName}/${totalCounter++}. ${(this as Context).currentTest?.title}.png`,
             await customDriver.takeScreenshot(), 'base64', (err) => {
                 if (err) console.log(err.message)
             })
     })
+})
 
-    after(async () => {
-        await homePage.quitBrowser()
-    })
+after(async () => {
+    homePage.quitBrowser()
 })

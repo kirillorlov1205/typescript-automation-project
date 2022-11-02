@@ -1,5 +1,6 @@
 export const BASE_URL = 'https://www.onliner.by'
 export const DEFAULT_WAITNG_TIME = 90000
+export const SCREEN_DIR = 'selenium/assets/screens'
 
 export const TEST_USER = {
     email: 'test12051@mail.ru',

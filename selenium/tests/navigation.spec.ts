@@ -4,9 +4,10 @@ import { mkdirSync, rmSync, writeFile } from 'fs'
 import { Context } from 'mocha'
 import { PageFactory } from '../pageObjects/pageFactory'
 import { customDriver } from '../utils/customDriver'
+import { SCREEN_DIR } from '../utils/constants'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage
-const navigationScreenDir = 'selenium/assets/navigationScreenshots'
+const suitName = 'Navigation bar tests';
 let totalCounter = 1
 
 const pageTitlesMap = {
@@ -18,12 +19,12 @@ const pageTitlesMap = {
     'Forum': 'Форум',
 }
 
-describe('Onliner navigation menu tests', () => {
+describe(suitName, () => {
 
     before(async () => {
         homePage.maximizeWindow()
-        rmSync(navigationScreenDir, { recursive: true, force: true })
-        mkdirSync(navigationScreenDir, { recursive: true })
+        rmSync(`${SCREEN_DIR}/${suitName}`, { recursive: true, force: true })
+        mkdirSync(`${SCREEN_DIR}/${suitName}`, { recursive: true })
     })
 
     beforeEach(async () => {
@@ -37,14 +38,11 @@ describe('Onliner navigation menu tests', () => {
             homePage.waitTillPageHeaderIncludeText(pageTitle, pageTitlesMap[pageTitle as keyof typeof pageTitlesMap]);
         });
     }
-})
 
-afterEach(async function () {
-    writeFile(`${navigationScreenDir}/${totalCounter++}. ${(this as Context).currentTest?.title}.png`, await customDriver.takeScreenshot(), 'base64', (err) => {
-        if (err) console.log(err.message)
+    afterEach(async function () {
+        writeFile(`${SCREEN_DIR}/${suitName}/${totalCounter++}. ${(this as Context).currentTest?.title}.png`,
+            await customDriver.takeScreenshot(), 'base64', (err) => {
+                if (err) console.log(err.message)
+            })
     })
-})
-
-after(async () => {
-    homePage.quitBrowser()
 })

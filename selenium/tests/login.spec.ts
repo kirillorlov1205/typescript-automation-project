@@ -6,22 +6,22 @@ import { Context } from 'mocha'
 import { LoginPage } from '../pageObjects/loginPage'
 import { PageFactory } from '../pageObjects/pageFactory'
 import { customDriver } from '../utils/customDriver'
-import { TEST_USER } from '../utils/constants'
+import { TEST_USER, SCREEN_DIR } from '../utils/constants'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage
 const loginPage: LoginPage = PageFactory.getPage(PAGES.LOGIN) as LoginPage
-const loginScreenDir = 'selenium/assets/loginScreenshots'
+const suitName = 'Login page tests';
 let totalCounter = 1
 
-describe('Login page test', () => {
+describe(suitName, () => {
 
     const emptyEmailValidationMessage = 'Укажите ник или e-mail'
     const emptyPasswordValidationMessage = 'Укажите пароль'
 
     before(async () => {
         homePage.maximizeWindow()
-        rmSync(loginScreenDir, { recursive: true, force: true })
-        mkdirSync(loginScreenDir, { recursive: true })
+        rmSync(`${SCREEN_DIR}/${suitName}`, { recursive: true, force: true })
+        mkdirSync(`${SCREEN_DIR}/${suitName}`, { recursive: true })
     })
 
     beforeEach(async () => {
@@ -47,14 +47,11 @@ describe('Login page test', () => {
         await loginPage.submitForm()
         expect(await (await loginPage.getValidationMessage()).getText()).to.have.string(emptyPasswordValidationMessage)
     })
-})
 
-afterEach(async function () {
-    writeFile(`${loginScreenDir}/${totalCounter++}. ${(this as Context).currentTest?.title}.png`, await customDriver.takeScreenshot(), 'base64', (err) => {
-        if (err) console.log(err.message)
+    afterEach(async function () {
+        writeFile(`${SCREEN_DIR}/${suitName}/${totalCounter++}. ${(this as Context).currentTest?.title}.png`,
+            await customDriver.takeScreenshot(), 'base64', (err) => {
+                if (err) console.log(err.message)
+            })
     })
-})
-
-after(async () => {
-    homePage.quitBrowser()
 })
