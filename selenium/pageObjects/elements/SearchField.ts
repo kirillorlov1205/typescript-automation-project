@@ -1,5 +1,5 @@
-import { customDriver } from "../../utils/customDriver"
-import { SELECTOR_TYPES } from "../../utils/types"
+import { customDriver } from '../../utils/customDriver'
+import { SELECTOR_TYPES } from '../../utils/types'
 
 export class SearchField {
 
@@ -36,10 +36,10 @@ export class SearchField {
     }
 
     public getCatalogSearchResultsList = async () => {
-        return await customDriver.findElement(SELECTOR_TYPES.CSS, `ul.search__results`)
+        return await customDriver.findElement(SELECTOR_TYPES.CSS,'ul.search__results')
     }
 
     public getResultItemFromForumList = async () => {
-        return await customDriver.findElement(SELECTOR_TYPES.CSS, `div.result__item_forum`)
+        return await customDriver.findElement(SELECTOR_TYPES.CSS, 'div.result__item_forum')
     }
 }
