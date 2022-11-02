@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
-import { HomePage } from '../src/pages/home_Page'
-import { LoginPage } from '../src/pages/login_Page'
-import { PageFactory } from '../src/pages/page_Factory'
+import { HomePage } from '../src/pages/HomePage'
+import { LoginPage } from '../src/pages/LoginPage'
+import { PageFactory } from '../src/pages/PageFactory'
 import { TEST_USER } from '../src/support/constants'
 import { PAGES } from '../src/support/types'
 

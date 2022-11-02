@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test'
 import { logger } from 'playwright/logger'
 import { BASE_URL } from '../support/constants'
-import { BasePage } from './base_Page'
+import { BasePage } from './BasePage'
 
 export class HomePage extends BasePage {
 

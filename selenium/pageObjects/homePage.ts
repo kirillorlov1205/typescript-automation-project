@@ -1,7 +1,7 @@
-import { BasePage } from "./basePage"
+import { BasePage } from "./BasePage"
 import { BASE_URL } from "../utils/constants"
 import { customDriver } from "../utils/customDriver"
-import { NavigationBar } from "./elements/navigation_Bar"
+import { NavigationBar } from "./elements/NavigationBar"
 
 export class HomePage extends BasePage {
 

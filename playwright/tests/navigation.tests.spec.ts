@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
-import { HomePage } from '../src/pages/home_Page'
-import { PageFactory } from '../src/pages/page_Factory'
+import { HomePage } from '../src/pages/HomePage'
+import { PageFactory } from '../src/pages/PageFactory'
 import { NAVIGATION_ITEMS, PAGES } from '../src/support/types'
 
 let homePage: HomePage

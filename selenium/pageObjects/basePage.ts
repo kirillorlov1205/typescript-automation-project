@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 import { customDriver } from '../utils/customDriver'
 import { SELECTOR_TYPES } from '../utils/types'
-import { NavigationBar } from './elements/navigation_Bar'
-import { SearchField } from './elements/search_Field'
+import { NavigationBar } from './elements/NavigationBar'
+import { SearchField } from './elements/SearchField'
 
 export class BasePage {
 

@@ -1,5 +1,5 @@
-import { HomePage } from '../support/pages/home_Page'
-import { PageFactory } from '../support/pages/page_Factory'
+import { HomePage } from '../support/pages/HomePage'
+import { PageFactory } from '../support/pages/PageFactory'
 import { NAVIGATION_ITEMS, PAGES } from '../support/types/types'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage

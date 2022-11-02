@@ -1,6 +1,6 @@
 import { PAGES } from '../types/types'
-import { HomePage } from './home_Page'
-import { LoginPage } from './login_Page'
+import { HomePage } from './HomePage'
+import { LoginPage } from './LoginPage'
 
 export class PageFactory {
     public static getPage(pageName: PAGES) {

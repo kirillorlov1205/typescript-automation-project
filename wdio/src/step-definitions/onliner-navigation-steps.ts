@@ -1,6 +1,6 @@
 import { Given, Then, When } from '@wdio/cucumber-framework'
-import { HomePage } from '../pages/home_Page'
-import { PageFactory } from '../pages/page-Factory'
+import { HomePage } from '../pages/HomePage'
+import { PageFactory } from '../pages/PageFactory'
 import { NAVIGATION_ITEMS, PAGES } from '../support/types'
 
 const homePage = PageFactory.getPage(PAGES.HOME) as HomePage

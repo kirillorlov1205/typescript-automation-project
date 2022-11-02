@@ -1,7 +1,7 @@
 import { Then, When } from '@wdio/cucumber-framework'
-import { HomePage } from '../pages/home_Page'
-import { LoginPage } from '../pages/login_Page'
-import { PageFactory } from '../pages/page-Factory'
+import { HomePage } from '../pages/HomePage'
+import { LoginPage } from '../pages/LoginPage'
+import { PageFactory } from '../pages/PageFactory'
 import { TEST_USER } from '../support/constants'
 import { PAGES } from '../support/types'
 

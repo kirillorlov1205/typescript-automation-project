@@ -1,7 +1,7 @@
 /// <reference types='cypress' />
 
-import { LoginPage } from './pages/login_Page'
-import { PageFactory } from './pages/page_Factory'
+import { LoginPage } from './pages/LoginPage'
+import { PageFactory } from './pages/PageFactory'
 import { PAGES } from './types/types'
 import 'cypress-iframe'
 

@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 import { DEFAULT_WAITNG_TIME, TEST_USER } from '../support/constants/constants'
-import { HomePage } from '../support/pages/home_Page'
-import { LoginPage } from '../support/pages/login_Page'
-import { PageFactory } from '../support/pages/page_Factory'
+import { HomePage } from '../support/pages/HomePage'
+import { LoginPage } from '../support/pages/LoginPage'
+import { PageFactory } from '../support/pages/PageFactory'
 import { PAGES } from '../support/types/types'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage

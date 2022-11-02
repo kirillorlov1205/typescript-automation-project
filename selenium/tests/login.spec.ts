@@ -1,10 +1,10 @@
-import { HomePage } from '../pageObjects/homePage'
+import { HomePage } from '../pageObjects/HomePage'
 import { PAGES } from '../utils/types'
 import { expect } from 'chai'
 import { mkdirSync, rmSync, writeFile } from 'fs'
 import { Context } from 'mocha'
-import { LoginPage } from '../pageObjects/loginPage'
-import { PageFactory } from '../pageObjects/pageFactory'
+import { LoginPage } from '../pageObjects/LoginPage'
+import { PageFactory } from '../pageObjects/PageFactory'
 import { customDriver } from '../utils/customDriver'
 import { TEST_USER, SCREEN_DIR } from '../utils/constants'
 

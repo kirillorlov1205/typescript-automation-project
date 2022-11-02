@@ -1,7 +1,7 @@
 import { Page } from '@playwright/test'
 import { logger } from 'playwright/logger'
-import { NavigationBar } from './elements/navigation_Bar'
-import { SearchField } from './elements/search_Field'
+import { NavigationBar } from './elements/NavigationBar'
+import { SearchField } from './elements/SearchField'
 
 export class BasePage {
 

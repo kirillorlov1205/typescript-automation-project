@@ -1,9 +1,9 @@
-import { HomePage } from '../pageObjects/homePage'
+import { HomePage } from '../pageObjects/HomePage'
 import { PAGES, SEARCH_ITEMS } from '../utils/types'
 import { expect } from 'chai'
 import { mkdirSync, rmSync, writeFile } from 'fs'
 import { after, Context } from 'mocha'
-import { PageFactory } from '../pageObjects/pageFactory'
+import { PageFactory } from '../pageObjects/PageFactory'
 import { customDriver } from '../utils/customDriver'
 import { SCREEN_DIR } from '../utils/constants'
 

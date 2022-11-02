@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
-import { HomePage } from 'playwright/src/pages/home_Page'
-import { PageFactory } from 'playwright/src/pages/page_Factory'
+import { HomePage } from 'playwright/src/pages/HomePage'
+import { PageFactory } from 'playwright/src/pages/PageFactory'
 import { PAGES, SEARCH_ITEMS } from 'playwright/src/support/types'
 
 const textForTest = 'test'

@@ -1,8 +1,8 @@
-import { HomePage } from '../pageObjects/homePage'
+import { HomePage } from '../pageObjects/HomePage'
 import { NAVIGATION_ITEMS, PAGES } from '../utils/types'
 import { mkdirSync, rmSync, writeFile } from 'fs'
 import { Context } from 'mocha'
-import { PageFactory } from '../pageObjects/pageFactory'
+import { PageFactory } from '../pageObjects/PageFactory'
 import { customDriver } from '../utils/customDriver'
 import { SCREEN_DIR } from '../utils/constants'
 

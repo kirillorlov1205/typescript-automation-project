@@ -1,8 +1,8 @@
 import { Page } from '@playwright/test'
 import { logger } from 'playwright/logger'
 import { PAGES } from '../support/types'
-import { HomePage } from './home_Page'
-import { LoginPage } from './login_Page'
+import { HomePage } from './HomePage'
+import { LoginPage } from './LoginPage'
 
 export class PageFactory {
     static getPage(page: Page, pageName: PAGES) {

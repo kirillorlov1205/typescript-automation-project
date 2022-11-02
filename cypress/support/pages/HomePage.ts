@@ -1,4 +1,4 @@
-import { BasePage } from './base_Page'
+import { BasePage } from './BasePage'
 
 export class HomePage extends BasePage {
 

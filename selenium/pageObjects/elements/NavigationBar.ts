@@ -7,7 +7,7 @@ export class NavigationBar {
     constructor() { }
 
     public getLoginButton = async () => {
-        return await customDriver.findElement(SELECTOR_TYPES.CSS, `div.auth-bar__item--text`)
+        return await customDriver.findElement(SELECTOR_TYPES.CSS, 'div.auth-bar__item--text')
     }
 
     public clickLoginButton = async () => {

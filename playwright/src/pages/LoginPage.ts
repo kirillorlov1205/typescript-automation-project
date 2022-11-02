@@ -1,6 +1,6 @@
 import { Page } from '@playwright/test'
 import { logger } from 'playwright/logger'
-import { BasePage } from './base_Page'
+import { BasePage } from './BasePage'
 
 export class LoginPage extends BasePage {
 

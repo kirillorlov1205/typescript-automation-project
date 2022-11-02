@@ -1,6 +1,6 @@
 import { PAGES } from '../utils/types'
-import { HomePage } from './homePage'
-import { LoginPage } from './loginPage'
+import { HomePage } from './HomePage'
+import { LoginPage } from './LoginPage'
 
 export class PageFactory {
     constructor() { }
