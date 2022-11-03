@@ -23,7 +23,7 @@ Registration form path: "finalProject/unit/src/registrationForm.ts"
 - Jest
 - Randomstring
 
-#### Tests running:
+### Tests running:
 
 You can use "-npm i" and run tests scripts by "npm run"
 
