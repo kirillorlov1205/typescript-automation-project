@@ -1,22 +1,22 @@
 # typescript-automation-project
 
-## typescript-automation-project repository includes:
+### typescript-automation-project repository includes:
 
-#### E2E tests for https://www.onliner.by web site by frameworks:
+#### E2E tests for https://www.onliner.by web site using frameworks:
 
 - Cypress
 - WebdriverIO
 - Playwright
 - Selenium
 
-#### API tests for web site https://jsonplaceholder.typicode.com by frameworks:
+#### API tests for web site https://jsonplaceholder.typicode.com using frameworks:
 
 - Jest
 - Axios
 - HTTP/HTTPS
 - Axios-logger
 
-#### Unit tests for function RegistrationForm by frameworks:
+#### Unit tests for function RegistrationForm using frameworks:
 
 Registration form path: "finalProject/unit/src/registrationForm.ts"
 
