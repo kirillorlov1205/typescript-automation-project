@@ -1,5 +1,5 @@
 import { expect, test } from '@jest/globals'
-import { registrationForm } from '../src/registrationForm'
+import { registrationForm } from '../src/RegistrationForm'
 import { INVALID_EMAILS, INVALID_LOGINS, INVALID_PASSWORDS, VALID_EMAILS, VALID_LOGINS, VALID_PASSWORDS, VALID_TEST_USER, VALIDATION_MESSAGES } from '../src/utils/types'
 import randomstring from 'randomstring'
 
