@@ -1,6 +1,6 @@
 # typescript-automation-project
 
-### typescript-automation-project repository includes:
+## typescript-automation-project repository includes:
 
 #### E2E tests for https://www.onliner.by web site by frameworks:
 
@@ -23,7 +23,7 @@ Registration form path: "finalProject/unit/src/registrationForm.ts"
 - Jest
 - Randomstring
 
-### Tests running:
+## Tests running:
 
 You can use "-npm i" and run tests scripts by "npm run"
 
@@ -34,7 +34,7 @@ You can use "-npm i" and run tests scripts by "npm run"
 - npm run cy-report - generate allure report for Cypress tests
 
 **WebdriverIO**
-(For run tests WebdriverIO you have to switch to wdio folder "cd ./wdio")
+(For running tests WebdriverIO you have to switch to wdio folder "cd ./wdio")
 
 - npm run wdio - run WebdriverIO tests
 - npm run wdio-report - generate allure report for WebdriverIO tests
