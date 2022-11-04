@@ -25,7 +25,7 @@ Registration form path: "typescript-automation-project/unit/src/registrationForm
 
 ### Tests running:
 
-***You can use "-npm i" and run tests scripts by "npm run"***
+### You can use "-npm i" and run tests scripts by "npm run"
 
 **Cypress**
 
