@@ -23,7 +23,7 @@ Registration form path: "typescript-automation-project/unit/src/registrationForm
 - Jest
 - Randomstring
 
-## Tests running:
+### Tests running:
 
 ***You can use "-npm i" and run tests scripts by "npm run"***
 
@@ -54,7 +54,7 @@ Registration form path: "typescript-automation-project/unit/src/registrationForm
 - npm run api-test - run API tests
 - npm run api-coverage - show API tests coverage
 
-***Test paths***
+### Test paths
 
 - API tests - typescript-automation-project/api/jest-test/test.spec.ts
 - Unit tests - typescript-automation-project/unit/jest-test/test.spec.ts
