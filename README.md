@@ -23,7 +23,7 @@ Registration form path: "typescript-automation-project/unit/src/registrationForm
 - Jest
 - Randomstring
 
-### Tests running:
+## Tests running:
 
 ### You can use "-npm i" and run tests scripts by "npm run"
 
