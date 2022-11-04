@@ -18,14 +18,14 @@
 
 #### Unit tests for function RegistrationForm using frameworks:
 
-Registration form path: "finalProject/unit/src/registrationForm.ts"
+Registration form path: "typescript-automation-project/unit/src/registrationForm.ts"
 
 - Jest
 - Randomstring
 
 ## Tests running:
 
-You can use "-npm i" and run tests scripts by "npm run"
+***You can use "-npm i" and run tests scripts by "npm run"***
 
 **Cypress**
 
@@ -53,3 +53,11 @@ You can use "-npm i" and run tests scripts by "npm run"
 
 - npm run api-test - run API tests
 - npm run api-coverage - show API tests coverage
+
+***Test paths***
+
+- API tests - typescript-automation-project/api/jest-test/test.spec.ts
+- Unit tests - typescript-automation-project/unit/jest-test/test.spec.ts
+- Cypress tests - typescript-automation-project/cypress/e2e
+- Playwright tests - typescript-automation-project/playwright/tests
+- Selenium tests - typescript-automation-project/selenium/tests
