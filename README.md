@@ -60,4 +60,5 @@ Registration form path: "typescript-automation-project/unit/src/registrationForm
 - Unit tests - typescript-automation-project/unit/jest-test/test.spec.ts
 - Cypress tests - typescript-automation-project/cypress/e2e
 - Playwright tests - typescript-automation-project/playwright/tests
+- WebdriverIO (switch to WebdriverIO folder "cd ./wdio") - typescript-automation-project/wdio/features
 - Selenium tests - typescript-automation-project/selenium/tests
