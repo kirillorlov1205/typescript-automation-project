@@ -38,6 +38,7 @@ describe(suitName, () => {
         await homePage.navigationBar.clickLoginButton()
         await loginPage.fillPasswordField(TEST_USER.password)
         await loginPage.submitForm()
+        await loginPage.getValidationMessage()
         expect(await (await loginPage.getValidationMessage()).getText()).to.have.string(emptyEmailValidationMessage)
     })
 

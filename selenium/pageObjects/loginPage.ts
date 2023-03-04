@@ -1,6 +1,6 @@
 import { customDriver } from '../utils/customDriver'
 import { SELECTOR_TYPES } from '../utils/types'
-import { BasePage } from './BasePage'
+import { BasePage } from '/BasePage'
 
 export class LoginPage extends BasePage {
 
