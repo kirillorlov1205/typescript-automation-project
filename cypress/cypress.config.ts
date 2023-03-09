@@ -5,8 +5,8 @@ import { logger } from './support/logger'
 
 export default defineConfig({
   e2e: {
-    specPattern: 'cypress/**/*api-tests.cy.ts',
-    // baseUrl: BASE_URL,
+    specPattern: 'cypress/**/*.cy.ts',
+    baseUrl: BASE_URL,
     defaultCommandTimeout: DEFAULT_WAITNG_TIME,
     supportFile: 'cypress/support/index.ts',
     videosFolder: `${ASSETS_FOLDER}/videos`,
