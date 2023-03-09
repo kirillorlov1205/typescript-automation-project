@@ -5,7 +5,7 @@ import { logger } from './support/logger'
 
 export default defineConfig({
   e2e: {
-    specPattern: 'cypress/**/*.cy.ts',
+    specPattern: 'cypress/e2e/*.cy.ts',
     baseUrl: BASE_URL,
     defaultCommandTimeout: DEFAULT_WAITNG_TIME,
     supportFile: 'cypress/support/index.ts',
