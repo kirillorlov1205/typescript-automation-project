@@ -7,7 +7,7 @@
     "unit-test": "jest --config unit/jest.config.json",
     "api-test": "jest --config api/jest.config.json",
     "api-coverage": "jest --config api/jest.config.json --coverage",
-    "cy-run": "rm -rf cypress/assets && cypress run --browser chrome --headless --config-file=./cypress/cypress.config.ts",
+    "cy-run": "cypress run --browser chrome --headless --config-file=./cypress/cypress.config.ts",
     "cy-open": "cypress open --config-file=./cypress/cypress.config.ts",
     "cy-report": "allure generate cypress/assets/allure-results --clean -o cypress/assets/allure-report && allure open cypress/assets/allure-report",
     "selenium": "mocha --config selenium/configs/.mocharc.json",
