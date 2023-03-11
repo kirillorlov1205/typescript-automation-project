@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     parameters {
+         string(name: 'SPEC', defaultValue: 'cypress/e2e/**', description: 'Enter the script path that you want to execure')
         choice(name: 'BROWSER', choices: ['chrome','firefox'], description: 'Choice the browser where you want to execure your scripts')
-        string(name: 'SPEC', defaultValue: 'cypress/e2e/**', description: 'Enter the script path that you want to execure')
     }
 
     options {
@@ -12,7 +12,10 @@ pipeline {
 
     stages {
         stage('Building'){
-            echo 'Building the application'
+            steps{
+                echo 'Building the application'
+            }
+            
         }
         stage('Testing'){
             steps{
@@ -21,7 +24,9 @@ pipeline {
             }
         }
         stage('Deploying'){
-            echo 'Deploy the application'
+            steps{
+                    echo 'Deploy the application'
+            }
         }
     }
 
