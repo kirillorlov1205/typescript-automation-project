@@ -45,6 +45,7 @@
     "chromedriver": "^107.0.0",
     "cypress": "^10.9.0",
     "cypress-iframe": "^1.0.1",
+    "cypress-mochawesome-reporter": "^3.3.0",
     "cypress-xpath": "^2.0.1",
     "dotenv": "^16.0.2",
     "eslint": "^8.24.0",

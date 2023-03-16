@@ -1,5 +1,5 @@
-import { PAGES } from '../types/types'
-import { HomePage } from './HomePage'
+import { PAGES } from 'cypress/support/types/types'
+import { HomePage } from '../../e2e/pages/HomePage'
 import { LoginPage } from './LoginPage'
 
 export class PageFactory {

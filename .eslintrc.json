@@ -19,6 +19,7 @@
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "off",
     "@angular-eslint/no-empty-lifecycle-method": "off",
-    "@typescript-eslint/no-var-requires": 0
+    "@typescript-eslint/no-var-requires": 0,
+    "no-undef": 0
   }
 }

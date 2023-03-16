@@ -12,3 +12,4 @@ selenium/assets
 /playwright/.cache/
 /playwright/configs/playwright
 /api/coverage
+cypress/reports

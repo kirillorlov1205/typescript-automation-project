@@ -1,8 +1,8 @@
 /// <reference types='cypress' />
 
-import { LoginPage } from './pages/LoginPage'
-import { PageFactory } from './pages/PageFactory'
-import { PAGES } from './types/types'
+import { LoginPage } from 'cypress/e2e/pages/LoginPage'
+import { PageFactory } from 'cypress/e2e/pages/PageFactory'
+import { PAGES } from 'cypress/support/types/types'
 import 'cypress-iframe'
 
 const loginPage = PageFactory.getPage(PAGES.LOGIN) as LoginPage

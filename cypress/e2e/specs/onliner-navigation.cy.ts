@@ -1,6 +1,6 @@
-import { HomePage } from '../support/pages/HomePage'
-import { PageFactory } from '../support/pages/PageFactory'
-import { NAVIGATION_ITEMS, PAGES } from '../support/types/types'
+import { HomePage } from 'cypress/e2e/pages/HomePage'
+import { PageFactory } from 'cypress/e2e/pages/PageFactory'
+import { NAVIGATION_ITEMS, PAGES } from 'cypress/support/types/types'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage
 
