@@ -1,4 +1,4 @@
-import { NAVIGATION_ITEMS } from '../../types/types'
+import { NAVIGATION_ITEMS } from '../../../support/types/types'
 
 export class NavigationBar {
 

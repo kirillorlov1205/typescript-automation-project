@@ -1,6 +1,6 @@
-import { HomePage } from '../support/pages/HomePage'
-import { PageFactory } from '../support/pages/PageFactory'
-import { PAGES, SEARCH_ITEMS } from '../support/types/types'
+import { HomePage } from 'cypress/e2e/pages/HomePage'
+import { PageFactory } from 'cypress/e2e/pages/PageFactory'
+import { PAGES, SEARCH_ITEMS } from 'cypress/support/types/types'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage
 const textForTest = 'test'

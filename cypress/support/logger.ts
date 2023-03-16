@@ -5,7 +5,7 @@ log4js.configure({
     appenders: {
         fulllog: {
             type: 'file',
-            filename: './cypress/assets/test-resultLogs/logs/fullLog.log',
+            filename: './assets/test-resultLogs/logs/fullLog.log',
             layout: {
                 type: 'pattern',
                 pattern: dateFormat
