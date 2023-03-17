@@ -20,9 +20,10 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"
+                bat "npm run cy-cleanup"
                 bat "npx cypress run --browser ${BROWSER} --config-file=./cypress/cypress.config.ts --spec ${SPEC} --reporter mochawesome"
-                bat "npx cy-merge-reports"
-                bat "npx cy-mochawesome-report"
+                bat "npm run cy-merge-reports"
+                bat "npm run cy-mochawesome-report"
             }
         }
         stage('Deploying'){
