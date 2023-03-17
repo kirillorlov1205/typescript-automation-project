@@ -4,12 +4,12 @@ import { ASSETS_FOLDER, BASE_URL, DEFAULT_WAITNG_TIME } from './support/constant
 import { logger } from './support/logger'
 
 export default defineConfig({
-  reporter: 'cypress-mochawesome-reporter',
+  reporter: 'mochawesome',
   reporterOptions: {
-    fileDir: 'cypress/',
-    charts: true,
-    reportPageTitle: 'Cypress report',
-    embeddedScreenshots: true,
+    reportDir: 'cypress/reports/mochawesome-report',
+    overwrite: false,
+    html: false,
+    json: true,
   },
   e2e: {
     specPattern: 'cypress/**/*.cy.ts',
@@ -24,7 +24,6 @@ export default defineConfig({
     viewportHeight: 1080,
     chromeWebSecurity: false,
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on);
       on('task', {
         log(message) {
           logger.info(message)

@@ -1,0 +1,295 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 6,
+    "passes": 2,
+    "pending": 0,
+    "failures": 4,
+    "testsRegistered": 6,
+    "passPercent": 33.333333333333336,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-03-17T18:24:03.260Z",
+    "end": "2023-03-17T18:24:49.122Z",
+    "duration": 45862
+  },
+  "results": [
+    {
+      "uuid": "7d7c3ea6-a83f-4b74-b670-58dea0e77674",
+      "title": "",
+      "fullFile": "cypress\\e2e\\specs\\onliner-login.cy.ts",
+      "file": "cypress\\e2e\\specs\\onliner-login.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9aefdbcb-df6b-4763-bde3-a7bc76552b97",
+          "title": "Login page test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should successfully log the user in and show protection pop up while login with correct credentials",
+              "fullTitle": "Login page test Should successfully log the user in and show protection pop up while login with correct credentials",
+              "timedOut": null,
+              "duration": 15344,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.navigationBar.clickLoginButton();\ncy.login(constants_1.TEST_USER.email, constants_1.TEST_USER.password);\nloginPage.getProtectionPopUpMessage().should('have.text', 'Давайте проверим, вы робот или нет');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div.auth-form__mediabox span`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div.auth-form__mediabox span`, but never found it.\n    at Context.eval (webpack:///./e2e/specs/onliner-login.cy.ts:27:46)",
+                "diff": null
+              },
+              "uuid": "0d897434-aaa1-4f1e-9476-b98fee808a3f",
+              "parentUUID": "9aefdbcb-df6b-4763-bde3-a7bc76552b97",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should show \"Укажите ник или e-mail\" validation message while logging in with empty email and valid password",
+              "fullTitle": "Login page test Should show \"Укажите ник или e-mail\" validation message while logging in with empty email and valid password",
+              "timedOut": null,
+              "duration": 14057,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "homePage.navigationBar.clickLoginButton();\nloginPage.fillPasswordField(constants_1.TEST_USER.password);\nloginPage.submitForm();\nloginPage.getValidationMessage().invoke('text').then((text) => {\n    (0, chai_1.expect)(text).to.include(emptyEmailValidationMessage);\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div.auth-form__description_error`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 10000ms: Expected to find element: `div.auth-form__description_error`, but never found it.\n    at LoginPage.getValidationMessage (webpack:///./e2e/pages/LoginPage.ts:46:18)\n    at Context.eval (webpack:///./e2e/specs/onliner-login.cy.ts:34:18)",
+                "diff": null
+              },
+              "uuid": "9946e226-90e9-447b-9b6c-05831546aa1c",
+              "parentUUID": "9aefdbcb-df6b-4763-bde3-a7bc76552b97",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Should show \"Укажите пароль\" validation message while logging in with valid email and empty password",
+              "fullTitle": "Login page test Should show \"Укажите пароль\" validation message while logging in with valid email and empty password",
+              "timedOut": null,
+              "duration": 5736,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "homePage.navigationBar.clickLoginButton();\nloginPage.fillEmailField(constants_1.TEST_USER.email);\nloginPage.submitForm();\nloginPage.getValidationMessage().invoke('text').then((text) => {\n    (0, chai_1.expect)(text).to.include(emptyPasswordValidationMessage);\n});",
+              "err": {},
+              "uuid": "5c81fb2e-0a38-4c00-b1f3-378f3085d044",
+              "parentUUID": "9aefdbcb-df6b-4763-bde3-a7bc76552b97",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5c81fb2e-0a38-4c00-b1f3-378f3085d044"
+          ],
+          "failures": [
+            "0d897434-aaa1-4f1e-9476-b98fee808a3f",
+            "9946e226-90e9-447b-9b6c-05831546aa1c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 35137,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "1e5bda18-98d8-4ff3-9481-682ef15d7781",
+      "title": "",
+      "fullFile": "cypress\\api\\jsonplaceholder.cy.ts",
+      "file": "cypress\\api\\jsonplaceholder.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e05253c2-3449-40b6-ac19-17cf422bf7ba",
+          "title": "jsonplaceholder api testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "4a281070-fb4a-462d-9224-e596ee6c2927",
+              "title": "GET",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Get user with id 1 list",
+                  "fullTitle": "jsonplaceholder api testing GET Get user with id 1 list",
+                  "timedOut": null,
+                  "duration": 1719,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.request('GET', '/people/1').then((response) => {\n    expect(response).to.have.property('status', 200);\n    expect(response.body).to.have.property('name', 'Luke Skywalker');\n});",
+                  "err": {
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://www.onliner.by/people/1\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://www.onliner.by/people/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/111.0.5563.65 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Fri, 17 Mar 2023 18:24:06 GMT\",\n  \"content-type\": \"text/html; charset=UTF-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=15\",\n  \"set-cookie\": [\n    \"ouid=fwAAAWQUsEYQ/Z4AF20CAg==; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/; httponly; secure\",\n    \"ouid=snyBDmQUsEYVP54EFwcSAg==; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/; httponly; secure\"\n  ],\n  \"content-encoding\": \"gzip\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\"\n}\nBody: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html class=\"js non-responsive-layout\" xml:lang=\"ru\" lang=\"ru\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-KWWV87F');</script>\n<!-- End Google Tag Manager -->\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"viewport\" content=\"width=1150,user-scalable=yes\" />\n<meta name=\"keywords\" content=\"\" />\n<meta name=\"description\" content=\"\" />\n<!-- Icons -->\n<!-- Common and Chrome: Android-->\n<link rel=\"icon\" type=\"image/x-icon\" href=\"https://gc.onliner.by/images/logo/icons/favicon.ico?v=2\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-16x16.png?v=2\" sizes=\"16x16\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-32x32.png?v=2\" sizes=\"32x32\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-96x96.png?v=2\" sizes=\"96x96\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-192x192.png?v=2\" sizes=\"192x192\">\n\n<!-- Colors -->\n<!-- Chrome: Android-->\n<meta name=\"theme-color\" content=\"#246eb7\">\n\n<!-- Pinned Tabs -->\n<!-- Safari: OS X -->\n<link rel=\"mask-icon\" href=\"https://gc.onliner.by/images/logo/icons/icon.svg?v=2\" color=\"#ff0000\">\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/global.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/quick-search.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"ht...\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://www.onliner.by/people/1\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://www.onliner.by/people/1\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/111.0.5563.65 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Fri, 17 Mar 2023 18:24:06 GMT\",\n  \"content-type\": \"text/html; charset=UTF-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=15\",\n  \"set-cookie\": [\n    \"ouid=fwAAAWQUsEYQ/Z4AF20CAg==; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/; httponly; secure\",\n    \"ouid=snyBDmQUsEYVP54EFwcSAg==; expires=Thu, 31-Dec-37 23:55:55 GMT; path=/; httponly; secure\"\n  ],\n  \"content-encoding\": \"gzip\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\"\n}\nBody: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html class=\"js non-responsive-layout\" xml:lang=\"ru\" lang=\"ru\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-KWWV87F');</script>\n<!-- End Google Tag Manager -->\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"viewport\" content=\"width=1150,user-scalable=yes\" />\n<meta name=\"keywords\" content=\"\" />\n<meta name=\"description\" content=\"\" />\n<!-- Icons -->\n<!-- Common and Chrome: Android-->\n<link rel=\"icon\" type=\"image/x-icon\" href=\"https://gc.onliner.by/images/logo/icons/favicon.ico?v=2\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-16x16.png?v=2\" sizes=\"16x16\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-32x32.png?v=2\" sizes=\"32x32\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-96x96.png?v=2\" sizes=\"96x96\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-192x192.png?v=2\" sizes=\"192x192\">\n\n<!-- Colors -->\n<!-- Chrome: Android-->\n<meta name=\"theme-color\" content=\"#246eb7\">\n\n<!-- Pinned Tabs -->\n<!-- Safari: OS X -->\n<link rel=\"mask-icon\" href=\"https://gc.onliner.by/images/logo/icons/icon.svg?v=2\" color=\"#ff0000\">\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/global.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/quick-search.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"ht...\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://swapi.dev/__cypress/runner/cypress_runner.js:144155:80)\n    at tryCatcher (https://swapi.dev/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://swapi.dev/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://swapi.dev/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://swapi.dev/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://swapi.dev/__cypress/runner/cypress_runner.js:9435:18)\n    at _drainQueueStep (https://swapi.dev/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://swapi.dev/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://swapi.dev/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://swapi.dev/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./api/jsonplaceholder.cy.ts:10:15)",
+                    "diff": null
+                  },
+                  "uuid": "7e51a2ea-1065-4c2c-b338-144a71fea743",
+                  "parentUUID": "4a281070-fb4a-462d-9224-e596ee6c2927",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Get users list",
+                  "fullTitle": "jsonplaceholder api testing GET Get users list",
+                  "timedOut": null,
+                  "duration": 952,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.request('GET', '/people').then((response) => {\n    console.log(response.body.length);\n    expect(response.body.results).to.have.length(10);\n});",
+                  "err": {
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://www.onliner.by/people\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://www.onliner.by/people\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/111.0.5563.65 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"ouid=snyBDmQUsEYVP54EFwcSAg==\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Fri, 17 Mar 2023 18:24:07 GMT\",\n  \"content-type\": \"text/html; charset=UTF-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=15\",\n  \"content-encoding\": \"gzip\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\"\n}\nBody: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html class=\"js non-responsive-layout\" xml:lang=\"ru\" lang=\"ru\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-KWWV87F');</script>\n<!-- End Google Tag Manager -->\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"viewport\" content=\"width=1150,user-scalable=yes\" />\n<meta name=\"keywords\" content=\"\" />\n<meta name=\"description\" content=\"\" />\n<!-- Icons -->\n<!-- Common and Chrome: Android-->\n<link rel=\"icon\" type=\"image/x-icon\" href=\"https://gc.onliner.by/images/logo/icons/favicon.ico?v=2\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-16x16.png?v=2\" sizes=\"16x16\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-32x32.png?v=2\" sizes=\"32x32\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-96x96.png?v=2\" sizes=\"96x96\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-192x192.png?v=2\" sizes=\"192x192\">\n\n<!-- Colors -->\n<!-- Chrome: Android-->\n<meta name=\"theme-color\" content=\"#246eb7\">\n\n<!-- Pinned Tabs -->\n<!-- Safari: OS X -->\n<link rel=\"mask-icon\" href=\"https://gc.onliner.by/images/logo/icons/icon.svg?v=2\" color=\"#ff0000\">\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/global.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/quick-search.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"ht...\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://www.onliner.by/people\n\nThe response we received from your web server was:\n\n  > 404: Not Found\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://www.onliner.by/people\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/111.0.5563.65 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"ouid=snyBDmQUsEYVP54EFwcSAg==\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 404 - Not Found\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Fri, 17 Mar 2023 18:24:07 GMT\",\n  \"content-type\": \"text/html; charset=UTF-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"keep-alive\": \"timeout=15\",\n  \"content-encoding\": \"gzip\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\"\n}\nBody: <!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html class=\"js non-responsive-layout\" xml:lang=\"ru\" lang=\"ru\" xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-KWWV87F');</script>\n<!-- End Google Tag Manager -->\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"viewport\" content=\"width=1150,user-scalable=yes\" />\n<meta name=\"keywords\" content=\"\" />\n<meta name=\"description\" content=\"\" />\n<!-- Icons -->\n<!-- Common and Chrome: Android-->\n<link rel=\"icon\" type=\"image/x-icon\" href=\"https://gc.onliner.by/images/logo/icons/favicon.ico?v=2\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-16x16.png?v=2\" sizes=\"16x16\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-32x32.png?v=2\" sizes=\"32x32\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-96x96.png?v=2\" sizes=\"96x96\">\n<link rel=\"icon\" type=\"image/png\" href=\"https://gc.onliner.by/images/logo/icons/favicon-192x192.png?v=2\" sizes=\"192x192\">\n\n<!-- Colors -->\n<!-- Chrome: Android-->\n<meta name=\"theme-color\" content=\"#246eb7\">\n\n<!-- Pinned Tabs -->\n<!-- Safari: OS X -->\n<link rel=\"mask-icon\" href=\"https://gc.onliner.by/images/logo/icons/icon.svg?v=2\" color=\"#ff0000\">\n\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/global.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"https://gc.onliner.by/css/old-content/quick-search.css?token=1677766000\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"ht...\n\n\nhttps://on.cypress.io/request\n    at <unknown> (https://swapi.dev/__cypress/runner/cypress_runner.js:144155:80)\n    at tryCatcher (https://swapi.dev/__cypress/runner/cypress_runner.js:11318:23)\n    at Promise._settlePromiseFromHandler (https://swapi.dev/__cypress/runner/cypress_runner.js:9253:31)\n    at Promise._settlePromise (https://swapi.dev/__cypress/runner/cypress_runner.js:9310:18)\n    at Promise._settlePromise0 (https://swapi.dev/__cypress/runner/cypress_runner.js:9355:10)\n    at Promise._settlePromises (https://swapi.dev/__cypress/runner/cypress_runner.js:9435:18)\n    at _drainQueueStep (https://swapi.dev/__cypress/runner/cypress_runner.js:6025:12)\n    at _drainQueue (https://swapi.dev/__cypress/runner/cypress_runner.js:6018:9)\n    at ../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://swapi.dev/__cypress/runner/cypress_runner.js:6034:5)\n    at Async.drainQueues (https://swapi.dev/__cypress/runner/cypress_runner.js:5904:14)\nFrom Your Spec Code:\n    at Context.eval (webpack:///./api/jsonplaceholder.cy.ts:16:15)",
+                    "diff": null
+                  },
+                  "uuid": "5d066d3e-34bc-43e0-9f85-dda72a07b116",
+                  "parentUUID": "4a281070-fb4a-462d-9224-e596ee6c2927",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "7e51a2ea-1065-4c2c-b338-144a71fea743",
+                "5d066d3e-34bc-43e0-9f85-dda72a07b116"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 2671,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "34c823dd-9cf0-450e-af29-a23cf50c02df",
+              "title": "POST",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Create user",
+                  "fullTitle": "jsonplaceholder api testing POST Create user",
+                  "timedOut": null,
+                  "duration": 717,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.request({\n    method: 'POST',\n    url: 'https://jsonplaceholder.typicode.com/posts',\n    body: {\n        title: 'New Post',\n        body: 'lets write post',\n        userId: 1,\n    },\n    headers: {\n        'Content-type': 'application/json; charset=UTF-8',\n    },\n}).then((response) => {\n    expect(response.body).to.have.property('id', 101);\n    expect(response.body).to.have.property('title', 'New Post');\n});",
+                  "err": {},
+                  "uuid": "244620fb-3ac3-43e4-968b-9bc7ca64a14e",
+                  "parentUUID": "34c823dd-9cf0-450e-af29-a23cf50c02df",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "244620fb-3ac3-43e4-968b-9bc7ca64a14e"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 717,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome-report",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
