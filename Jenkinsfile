@@ -12,7 +12,7 @@ pipeline {
     
      triggers {
         parameterizedCron('''
-            55 15 * * * * %SPEC=cypress/e2e/**/*.cy.ts;BROWSER=chrome
+            55 14 * * * * %SPEC=cypress/e2e/**/*.cy.ts;BROWSER=chrome
         ''')
     }
 
