@@ -20,6 +20,7 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"
+                bash "rm -rf cypress/reports && rm -rf cypress/assets"
                 bat "npx cypress run --browser ${BROWSER} --config-file=./cypress/cypress.config.ts --spec ${SPEC} --reporter mochawesome"
                 bat "npm run cy-merge-reports"
                 bat "npm run cy-mochawesome-report"
