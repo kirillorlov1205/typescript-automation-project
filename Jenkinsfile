@@ -33,7 +33,7 @@ pipeline {
 }
     post{
         always {
-            dir('cypress/reports')
+            dir('reports')
             deleteDir()
         }
     }
