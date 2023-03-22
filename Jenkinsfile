@@ -6,10 +6,6 @@ pipeline {
         choice(name: 'BROWSER', choices: ['chrome','firefox'], description: 'Choice the browser where you want to execute your scripts')
     }
     
-    triggers {
-    parameterizedCron("0 12 * * * %name=value")
-  }
-    
     options {
         ansiColor('xterm')
     }
