@@ -5,17 +5,16 @@ pipeline {
         string(name: 'SPEC', defaultValue: 'cypress/e2e/**/*.cy.ts', description: 'Enter the script path that you want to execute')
         choice(name: 'BROWSER', choices: ['chrome','firefox'], description: 'Choice the browser where you want to execute your scripts')
     }
+    
+     triggers {
+        parameterizedCron('''
+            00 14 * * * * %SPEC=cypress/e2e/**/*.cy.ts;BROWSER=chrome
+        ''')
   
     options {
         ansiColor('xterm')
     }
-    
-    pipelineTriggers([
-    parameterizedCron('''
-        57 14 * * * * %SPEC=cypress/e2e/**/*.cy.ts;BROWSER=chrome
-    ''')
-  ])
-    
+     
     stages {
         stage('Building'){
             steps{
