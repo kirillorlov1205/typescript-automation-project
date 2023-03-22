@@ -32,4 +32,10 @@ pipeline {
             }
         }
     }
+      post{
+        always {
+            dir("rm -rf cypress/reports")
+            deleteDir()
+        }
+    }
 }
