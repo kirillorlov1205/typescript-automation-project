@@ -7,7 +7,7 @@ pipeline {
     }
     
      triggers {
-       parameterizedCron 'H/15 * * * * %name=value'
+       parameterizedSpecification : 'H/15 * * * * %name=value'
      }
   
     options {
