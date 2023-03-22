@@ -31,10 +31,4 @@ pipeline {
             }
         }
     }
-
-    post{
-        always {
-            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'cypress/reports/mochawesome-html-report/', reportFiles: 'Cypress_HTML_Report.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
-        }
-    }
 }
