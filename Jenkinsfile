@@ -10,6 +10,7 @@ pipeline {
         parameterizedCron('''
             00 14 * * * * %SPEC=cypress/e2e/**/*.cy.ts;BROWSER=chrome
         ''')
+     }
   
     options {
         ansiColor('xterm')
