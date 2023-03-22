@@ -17,12 +17,6 @@ pipeline {
             }
             
         }
-        stage('Clean reports') {
-            steps {
-                dir('cypress/reports')
-                deleteDir()
-            }
-        }
         stage('Testing'){
             steps{
                 bat "npm i"
@@ -35,6 +29,11 @@ pipeline {
             steps{
                 echo 'Deploy the application'
             }
+        }
+        post{
+        always {
+            dir('cypress/reports')
+                deleteDir()
         }
     }
 }
