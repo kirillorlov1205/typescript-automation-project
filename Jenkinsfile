@@ -7,7 +7,7 @@ pipeline {
     }
     
      triggers {
-       cron 'H/15 * * * *' % NAME=Huu; SITE=WWW.DEVOPSROLES.COM
+       parameterizedCron 'H/15 * * * * %name=value'
      }
   
     options {
