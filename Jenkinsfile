@@ -30,10 +30,4 @@ pipeline {
                 echo 'Deploy the application'
             }
         }
-        post{
-        always {
-            dir('cypress/reports')
-                deleteDir()
-        }
-    }
 }
