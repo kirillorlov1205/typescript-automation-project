@@ -7,7 +7,7 @@ pipeline {
     }
     
      triggers {
-        parameterizedCron(H 14 * * * %SPEC="cypress/e2e/**/*.cy.ts";BROWSER=chrome)
+       cron 'H 14 * * *'
      }
   
     options {
