@@ -1,15 +1,13 @@
 pipeline {
     agent any
+    
+    parameterizedSpecification : 'H/15 * * * * %name=value'
 
     parameters {
         string(name: 'SPEC', defaultValue: 'cypress/e2e/**/*.cy.ts', description: 'Enter the script path that you want to execute')
         choice(name: 'BROWSER', choices: ['chrome','firefox'], description: 'Choice the browser where you want to execute your scripts')
     }
     
-     triggers {
-       parameterizedSpecification : 'H/15 * * * * %name=value'
-     }
-  
     options {
         ansiColor('xterm')
     }
