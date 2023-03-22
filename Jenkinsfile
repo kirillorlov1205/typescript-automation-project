@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Clean reports') {
             steps {
-                dir("cypress/reports")
+                dir('cypress/reports')
                 deleteDir()
             }
         }
