@@ -31,4 +31,10 @@ pipeline {
             }
         }
 }
+    post{
+        always {
+            dir('cypress/reports')
+            deleteDir()
+        }
+    }
 }
