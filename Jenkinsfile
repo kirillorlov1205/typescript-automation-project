@@ -10,12 +10,12 @@ pipeline {
         ansiColor('xterm')
     }
     
-     triggers {
-        parameterizedCron('''
-            55 14 * * * * %SPEC=cypress/e2e/**/*.cy.ts;BROWSER=chrome
-        ''')
-    }
-
+    pipelineTriggers([
+    parameterizedCron('''
+        57 14 * * * * %SPEC=cypress/e2e/**/*.cy.ts;BROWSER=chrome
+    ''')
+  ])
+    
     stages {
         stage('Building'){
             steps{
