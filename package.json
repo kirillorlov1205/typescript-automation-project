@@ -7,16 +7,17 @@
     "unit-test": "jest --config unit/jest.config.json",
     "api-test": "jest --config api/jest.config.json",
     "api-coverage": "jest --config api/jest.config.json --coverage",
-    "cy-run": "cypress run --browser chrome --headless --config-file=./cypress/cypress.config.ts --reporter mochawesome",
+    "cy-e2e-run": "npm run cy-cleanup && npx cypress run --browser chrome --headless --config-file=./cypress/e2e/cypress.config.ts --reporter mochawesome",
+    "cy-api-run": "npm run cy-cleanup && npx cypress run --browser chrome --headless --config-file=./cypress/api/cypress.config.ts --reporter mochawesome",
     "cy-open": "cypress open --config-file=./cypress/cypress.config.ts",
     "cy-allure-report": "allure generate cypress/assets/allure-results --clean -o cypress/assets/allure-report && allure open cypress/assets/allure-report",
+    "cy-cleanup": "rm -rf cypress/reports && rm -rf cypress/assets",
+    "cy-merge-reports": "mochawesome-merge cypress/reports/mochawesome-report/*.json > output.json",
+    "cy-mochawesome-report": "marge --reportDir cypress/reports/mochawesome-html-report -t Cypress_Test_Report -p Cypress_HTML_Report -f Cypress_HTML_Report --charts true output.json",
     "selenium": "mocha --config selenium/configs/.mocharc.json",
     "playwright": "rm -rf playwright/test-results && playwright test --config=./playwright/configs/playwright.config.ts",
     "playwright-report": "playwright show-report playwright/test-results/reports",
-    "playwright-allure-report": "allure generate playwright/test-results/allure-results --clean -o playwright/test-results/allure-report && allure open playwright/test-results/allure-report",
-    "cy-cleanup": "rm -rf cypress/reports && rm -rf cypress/assets",
-    "cy-merge-reports": "mochawesome-merge cypress/reports/mochawesome-report/*.json > output.json",
-    "cy-mochawesome-report": "marge --reportDir cypress/reports/mochawesome-html-report -t Cypress_Test_Report -p Cypress_HTML_Report -f Cypress_HTML_Report --charts true output.json"
+    "playwright-allure-report": "allure generate playwright/test-results/allure-results --clean -o playwright/test-results/allure-report && allure open playwright/test-results/allure-report"
   },
   "repository": {
     "type": "git",
