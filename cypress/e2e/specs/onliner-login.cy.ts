@@ -1,9 +1,9 @@
 import { expect } from 'chai'
-import { DEFAULT_WAITNG_TIME, TEST_USER } from 'cypress/support/constants/constants'
+import { DEFAULT_WAITNG_TIME, TEST_USER } from 'cypress/e2e/support/constants'
 import { HomePage } from 'cypress/e2e/pages/HomePage'
 import { LoginPage } from 'cypress/e2e/pages/LoginPage'
 import { PageFactory } from 'cypress/e2e/pages/PageFactory'
-import { PAGES } from 'cypress/support/types/types'
+import { PAGES } from 'cypress/e2e/support/types'
 
 const homePage: HomePage = PageFactory.getPage(PAGES.HOME) as HomePage
 const loginPage: LoginPage = PageFactory.getPage(PAGES.LOGIN) as LoginPage

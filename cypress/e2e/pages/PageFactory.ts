@@ -1,4 +1,4 @@
-import { PAGES } from 'cypress/support/types/types'
+import { PAGES } from 'cypress/e2e/support/types'
 import { HomePage } from '../../e2e/pages/HomePage'
 import { LoginPage } from './LoginPage'
 

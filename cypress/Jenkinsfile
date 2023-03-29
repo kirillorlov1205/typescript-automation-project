@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     parameters {
-        string(name: 'SPEC', defaultValue: 'cypress/e2e/**/*.cy.ts', description: 'Enter the script path that you want to execute')
+        choice(name: 'TESTING_TYPE',  choices: ['api','e2e'], description: 'Enter testing type that you want to execute')
         choice(name: 'BROWSER', choices: ['chrome','firefox'], description: 'Choice the browser where you want to execute your scripts')
     }
     
@@ -19,7 +19,7 @@ pipeline {
         stage('Testing'){
             steps{
                 bat "npm i"
-                bat "npx cypress run --browser ${BROWSER} --config-file=./cypress/cypress.config.ts --spec ${SPEC} --reporter mochawesome"
+                bat "npx cypress run --browser ${BROWSER} --config-file=./cypress/${TESTING_TYPE}/cypress.config.ts --reporter mochawesome"
                 bat "npm run cy-merge-reports"
                 bat "npm run cy-mochawesome-report"
             }

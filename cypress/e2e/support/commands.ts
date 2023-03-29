@@ -2,7 +2,7 @@
 
 import { LoginPage } from 'cypress/e2e/pages/LoginPage'
 import { PageFactory } from 'cypress/e2e/pages/PageFactory'
-import { PAGES } from 'cypress/support/types/types'
+import { PAGES } from 'cypress/e2e/support/types'
 import 'cypress-iframe'
 
 const loginPage = PageFactory.getPage(PAGES.LOGIN) as LoginPage
